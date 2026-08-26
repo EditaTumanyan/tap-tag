@@ -20,6 +20,8 @@ const focusClass = "border-[#f7ddc6] focus:outline-none focus:border-[#f97316] f
 export default function ContactClient() {
   const [audience, setAudience] = useState("business");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <div className="fade-up" style={{ maxWidth: 800, margin: "0 auto", padding: "56px 24px 100px" }}>
@@ -38,9 +40,34 @@ export default function ContactClient() {
         </div>
       ) : (
         <form
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
-            setSubmitted(true);
+            setError(null);
+            setSubmitting(true);
+            const form = e.currentTarget;
+            const formData = new FormData(form);
+            try {
+              const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  name: formData.get("name"),
+                  email: formData.get("email"),
+                  phone: formData.get("phone"),
+                  company: formData.get("company"),
+                  audience,
+                  message: formData.get("message"),
+                }),
+              });
+              if (!res.ok) {
+                throw new Error("Failed to send message.");
+              }
+              setSubmitted(true);
+            } catch {
+              setError("Something went wrong. Please try again or email us directly.");
+            } finally {
+              setSubmitting(false);
+            }
           }}
           style={{ display: "flex", flexDirection: "column", gap: 20 }}
         >
@@ -85,8 +112,12 @@ export default function ContactClient() {
             className={focusClass}
             style={{ ...inputStyle, resize: "vertical" }}
           />
+          {error && (
+            <p style={{ color: "#dc2626", fontSize: 14, margin: 0 }}>{error}</p>
+          )}
           <button
             type="submit"
+            disabled={submitting}
             className="bg-[#f97316] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(249,115,22,0.55)] hover:bg-[#ea580c]"
             style={{
               color: "#fff",
@@ -96,12 +127,13 @@ export default function ContactClient() {
               fontFamily: "'Nunito',sans-serif",
               fontWeight: 700,
               fontSize: 16,
-              cursor: "pointer",
+              cursor: submitting ? "not-allowed" : "pointer",
+              opacity: submitting ? 0.7 : 1,
               alignSelf: "flex-start",
               transition: "transform .18s,box-shadow .18s,background .18s",
             }}
           >
-            Send Message
+            {submitting ? "Sending..." : "Send Message"}
           </button>
         </form>
       )}
