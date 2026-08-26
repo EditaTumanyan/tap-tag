@@ -4,7 +4,7 @@ import GlyphIcon from "@/components/GlyphIcon";
 import CountUp from "@/components/CountUp";
 import CtaBanner from "@/components/CtaBanner";
 import { glyphs } from "@/data/glyphs";
-import { featureBoxes, stats, reviews } from "@/data/content";
+import { featureBoxes, stats, partners } from "@/data/content";
 
 const gradientText = {
   background: "linear-gradient(90deg,#9333ea,#ec4899,#f97316)",
@@ -46,10 +46,10 @@ export default function Home() {
             className="text-[40px] md:text-[56px] lg:text-[68px]"
             style={{ fontFamily: "'Nunito',sans-serif", lineHeight: 1.06, fontWeight: 700, color: "#2b2733", margin: "0 0 26px" }}
           >
-            From Bold Ideas to <span style={gradientText}>High-Performance</span> Digital Marketing Results
+            Turning Bold Ideas Into <span style={gradientText}>Measurable Results</span>
           </h1>
           <p style={{ fontSize: 18, color: "#57517a", lineHeight: 1.7, margin: "0 0 36px" }}>
-            Since 2015, we&rsquo;ve been the strategic engine behind 100+ celebrities and 200+ global brands. As a full-service digital marketing agency, we thrive on the collaboration between the Armenian and US markets to scale your digital presence globally. We don&rsquo;t just manage social media marketing; we combine precision targeting with data-driven content strategies to fuel your growth and deliver real results with measurable ROI.
+            Since 2015, TapTag has helped 300+ brands and 70+ public figures across Armenia and the United States turn their digital presence into measurable growth. As a full-service digital marketing agency, we combine strategy, creativity, and data to build campaigns that connect brands with the right audiences and deliver real results. From social media and performance marketing to content and brand growth, we create digital strategies designed to make an impact — and deliver measurable ROI.
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <Link
@@ -57,7 +57,7 @@ export default function Home() {
               className="bg-[#f97316] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(249,115,22,0.55)] hover:bg-[#ea580c]"
               style={{ ...primaryButton, padding: "16px 34px", fontWeight: 700, fontSize: 16 }}
             >
-              Book a Free Call
+              Contact Us
             </Link>
             <Link
               href="/services"
@@ -75,7 +75,7 @@ export default function Home() {
                 display: "inline-block",
               }}
             >
-              Explore Services
+              Explore Our Services
             </Link>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function Home() {
 
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px 80px" }}>
         <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(32px,5vw,48px)", fontWeight: 700, margin: "0 0 48px", color: "#2b2733", textAlign: "center" }}>
-          What We <span style={gradientText}>Offer?</span>
+          Our <span style={gradientText}>Digital Marketing Solutions</span>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: 28 }}>
           {featureBoxes.map((b) => (
@@ -106,9 +106,9 @@ export default function Home() {
       <div style={{ background: "#faf9fd", padding: "64px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(32px,5vw,48px)", fontWeight: 700, margin: "0 0 14px", color: "#2b2733", textAlign: "center" }}>
-            Two audiences. One growth engine.
+            Built for Businesses. Built for Influence.
           </h2>
-          <p style={{ fontSize: 16, color: "#57517a", textAlign: "center", margin: "0 0 40px" }}>Choose your path</p>
+          <p style={{ fontSize: 16, color: "#57517a", textAlign: "center", margin: "0 0 40px" }}>Two specialized paths, one goal: turning digital presence into measurable growth.</p>
           <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: 28 }}>
             <Link
               href="/services?tab=business"
@@ -122,11 +122,11 @@ export default function Home() {
                   <path d="M2.5 12h19" />
                 </svg>
               </div>
-              <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 28, fontWeight: 700, color: "#fff", margin: "0 0 16px" }}>For Businesses</h3>
+              <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 28, fontWeight: 700, color: "#fff", margin: "0 0 16px" }}>For Businesses & Brands</h3>
               <p style={{ fontSize: 16, color: "#c8c3dd", lineHeight: 1.65, margin: "0 0 28px", maxWidth: 440 }}>
-                Performance marketing, brand strategy, and product development for companies ready to scale online.
+                From strategy and performance marketing to content, SEO, and digital development, we build the systems businesses need to grow, compete, and scale online.
               </p>
-              <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, color: "#fff" }}>View business services →</span>
+              <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, color: "#fff" }}>View Business Services →</span>
             </Link>
             <Link
               href="/services?tab=artist"
@@ -150,11 +150,11 @@ export default function Home() {
                   <path d="M8.5 21.5h7" />
                 </svg>
               </div>
-              <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 28, fontWeight: 700, color: "#fff", margin: "0 0 16px" }}>For Artists & Celebrities</h3>
+              <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 28, fontWeight: 700, color: "#fff", margin: "0 0 16px" }}>For Artists & Public Figures</h3>
               <p style={{ fontSize: 16, color: "rgba(255,255,255,0.9)", lineHeight: 1.65, margin: "0 0 28px", maxWidth: 440 }}>
-                Global brand strategy, content direction, and rights management for the industry&rsquo;s most influential voices.
+                From personal brand engineering and content strategy to music marketing, audience growth, and rights management, we build digital ecosystems that turn talent into influence.
               </p>
-              <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, color: "#fff" }}>View artist services →</span>
+              <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, color: "#fff" }}>View Artist Services →</span>
             </Link>
           </div>
         </div>
@@ -177,36 +177,35 @@ export default function Home() {
         </div>
       </div>
 
-      <div style={{ padding: "72px 0" }}>
+      <div style={{ padding: "80px 0 72px", overflow: "hidden" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px" }}>
           <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(32px,5vw,48px)", fontWeight: 700, margin: "0 0 14px", color: "#2b2733", textAlign: "center" }}>
-            What Our Clients <span style={gradientText}>Say About Us</span>
+            Trusted Partnerships. <span style={gradientText}>Real Results.</span>
           </h2>
-          <p style={{ fontSize: 16, color: "#8a84a8", textAlign: "center", margin: "0 0 40px" }}>Brands and artists we&rsquo;ve scaled since 2015.</p>
+          <p style={{ fontSize: 16, color: "#8a84a8", textAlign: "center", margin: "0 0 40px" }}>We build long-term partnerships that turn digital strategy into meaningful results.</p>
         </div>
-        <div style={{ display: "flex", gap: 28, overflowX: "auto", overflowY: "hidden", scrollSnapType: "x mandatory", padding: "10px 24px 24px" }}>
-          {reviews.map((rv) => (
-            <div
-              key={rv.slot}
-              className={`${hoverLift} border-[#f2e9f3]`}
-              style={{ flex: "0 0 320px", scrollSnapAlign: "start", background: "#fff", ...cardBorder, borderRadius: 14, padding: "34px 30px", textAlign: "center" }}
-            >
-              <ImageSlot placeholder="Photo" style={{ width: 72, height: 72, margin: "0 auto 20px", border: "3px solid #fce7f3", borderRadius: "50%", background: "#fdf2f8" }} />
-              <div style={{ color: "#ec4899", fontSize: 15, letterSpacing: 3, marginBottom: 18 }}>★★★★★</div>
-              <p style={{ fontSize: 15, color: "#57517a", lineHeight: 1.7, margin: "0 0 22px", fontStyle: "italic" }}>{rv.quote}</p>
-              <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 16, fontWeight: 700, color: "#2b2733" }}>{rv.name}</div>
-              <div style={{ fontSize: 14, color: "#8a84a8", marginTop: 4 }}>{rv.role}</div>
-            </div>
-          ))}
-        </div>
-        <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 4 }}>
-          {reviews.map((rv) => (
-            <span key={rv.slot} style={{ width: 8, height: 8, borderRadius: "50%", background: "#f2ddcb" }} />
-          ))}
+        <div style={{ position: "relative" }}>
+          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 100, background: "linear-gradient(90deg,#FAFAF8,rgba(250,250,248,0))", zIndex: 2, pointerEvents: "none" }} />
+          <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 100, background: "linear-gradient(270deg,#FAFAF8,rgba(250,250,248,0))", zIndex: 2, pointerEvents: "none" }} />
+          <div style={{ display: "flex", width: "max-content", animation: "partnerMarquee 48s linear infinite", padding: "16px 0" }}>
+            {partners.map((pn, i) => (
+              <div
+                key={`${pn.slot}-${i}`}
+                className={`${hoverLift} border-[#f2e9f3]`}
+                style={{ flex: "0 0 auto", width: 300, marginRight: 24, background: "#fff", ...cardBorder, borderRadius: 16, padding: "36px 30px", display: "flex", alignItems: "center", gap: 20 }}
+              >
+                <ImageSlot src={"logo" in pn ? pn.logo : undefined} alt={pn.name} placeholder="Logo" style={{ width: 76, height: 76, flexShrink: 0, border: "1px solid #f2e9f3", borderRadius: 14, background: "#faf9fd" }} />
+                <div style={{ minWidth: 0 }}>
+                  <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 18, fontWeight: 700, color: "#2b2733", lineHeight: 1.3 }}>{pn.name}</div>
+                  <div style={{ fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "#9b93ab", fontWeight: 700, marginTop: 6 }}>{pn.category}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <CtaBanner heading="Ready to grow, get discovered, or get paid what you're owed?" buttonLabel="Start the Conversation" />
+      <CtaBanner heading="Ready to take your digital presence to the next level?" buttonLabel="Start the Conversation" />
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default function Header() {
         }}
       >
         <Link href="/" style={{ display: "flex", alignItems: "center" }}>
-          <Image src="/assets/logo-gradient-horizontal.png" alt="TapTag" width={107} height={34} style={{ height: 34, width: "auto" }} priority />
+          <Image src="/assets/logo.png" alt="TapTag" width={133} height={44} style={{ height: 44, width: "auto" }} priority />
         </Link>
 
         <nav className="hidden md:flex" style={{ alignItems: "center", gap: 40 }}>

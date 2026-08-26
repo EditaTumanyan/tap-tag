@@ -8,13 +8,15 @@ type ImageSlotProps = {
   style?: CSSProperties;
   className?: string;
   sizes?: string;
+  objectPosition?: string;
+  scale?: number;
 };
 
-export default function ImageSlot({ src, alt = "", placeholder = "Image", style, className, sizes = "(max-width: 768px) 100vw, 50vw" }: ImageSlotProps) {
+export default function ImageSlot({ src, alt = "", placeholder = "Image", style, className, sizes = "(max-width: 768px) 100vw, 50vw", objectPosition = "50% 50%", scale = 1 }: ImageSlotProps) {
   if (src) {
     return (
       <div className={className} style={{ position: "relative", overflow: "hidden", ...style }}>
-        <Image src={src} alt={alt} fill sizes={sizes} style={{ objectFit: "cover" }} />
+        <Image src={src} alt={alt} fill sizes={sizes} style={{ objectFit: "cover", objectPosition, transform: scale !== 1 ? `scale(${scale})` : undefined }} />
       </div>
     );
   }

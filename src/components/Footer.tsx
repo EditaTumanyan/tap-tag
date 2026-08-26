@@ -11,10 +11,10 @@ export default function Footer() {
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <div
           className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr]"
-          style={{ gap: 40, marginBottom: 18 }}
+          style={{ gap: 40, marginBottom: 6 }}
         >
           <div>
-            <Image src="/assets/logo-gradient-horizontal.png" alt="TapTag" width={107} height={34} style={{ height: 34, width: "auto", marginBottom: 16 }} />
+            <Image src="/assets/logo.png" alt="TapTag" width={133} height={44} style={{ height: 44, width: "auto", marginBottom: 16 }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {footerLinks.map((fl) => (
@@ -78,10 +78,27 @@ export default function Footer() {
                   <path d="M16 3h-2a5 5 0 00-5 5v3H6v4h3v6h4v-6h3l1-4h-4V8a1 1 0 011-1h3z" strokeLinejoin="round" />
                 </svg>
               </a>
+              <a href="https://www.youtube.com/@TapTagDigital" target="_blank" rel="noopener noreferrer" className={socialIconClass} style={socialIconStyle}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <rect x="2" y="5" width="20" height="14" rx="4" />
+                  <path d="M10 9l6 3-6 3V9z" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+              <a href="https://www.tiktok.com/@taptagdigital" target="_blank" rel="noopener noreferrer" className={socialIconClass} style={socialIconStyle}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M14 3v10.5a3.5 3.5 0 11-3-3.46" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M14 3c0 2.5 2 4.5 4.5 4.7" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
-        <span style={{ fontSize: 13, color: "#9a94b8" }}>© 2026 TapTag. Yerevan, Armenia</span>
+        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20 }}>
+          <span style={{ fontSize: 13, color: "#9a94b8" }}>© 2026 TapTag. Yerevan, Armenia</span>
+          <Link href="/privacy-policy" className="text-[#9a94b8] hover:text-[#f97316]" style={{ fontSize: 13, textDecoration: "none", transition: "color .2s" }}>
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </div>
   );

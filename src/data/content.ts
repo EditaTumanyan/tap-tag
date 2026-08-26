@@ -86,23 +86,46 @@ export const consultingItems = [
 ];
 
 export const featureBoxes = [
-  { icon: "chart", title: "Strategic Brand Growth", desc: "We build long-term value through precious targeting and market analysis, scaling your brand across Armenian and US market" },
-  { icon: "pen", title: "Data-Driven Content", desc: "We engineer digital narratives and visionary content that command attention and transform your digital presence into a powerhouse" },
-  { icon: "target", title: "Targeted Advertising", desc: "Maximize your reach with high-performance ad campaigns designed to convert. We focus on measurable ROI and surgical precision in every market." },
-  { icon: "gear", title: "Full-Service Management", desc: "From Social Media Marketing to daily operations, we provide a comprehensive digital presence so you can focus on running your business." },
-  { icon: "code", title: "Digital Development & Innovation", desc: "We build high-performance websites and digital tools that don’t just look good — they convert. Our development team ensures your platform is fast, scalable, and ready for the global market." },
-  { icon: "search", title: "Performance Analytics", desc: "Get real results backed by transparent data. We provide deep-dive analytics to track your growth and optimize for constant improvement." },
+  { icon: "chart", title: "Strategic Brand Growth", desc: "We build long-term brand value through market research, audience insights, and growth strategy — helping businesses scale across Armenia and international markets." },
+  { icon: "spark", title: "Content & Creative", desc: "We create strategic, data-informed content — from visual concepts to video — designed to capture attention, build engagement, and strengthen your brand." },
+  { icon: "target", title: "Targeted Advertising", desc: "High-performance campaigns built to deliver results. We combine smart targeting, strategic budgets, and continuous optimization to maximize your return on investment." },
+  { icon: "gear", title: "Digital & Social Management", desc: "From social media management to daily digital execution, we handle the moving parts of your online presence so you can focus on your business." },
+  { icon: "code", title: "Digital Development & Innovation", desc: "We design and develop fast, scalable websites and digital solutions that look great, perform seamlessly, and support your business goals." },
+  { icon: "search", title: "Performance & Analytics", desc: "We turn data into actionable insights — tracking performance, identifying opportunities, and continuously refining your strategy to drive stronger results." },
 ];
 
 export const stats = [
   { value: "10+", raw: 10, unit: "Years", label: "Digital marketing & media experience" },
-  { value: "70+", raw: 70, unit: "Celebrities", label: "Artists & public figures managed" },
-  { value: "300+", raw: 300, unit: "Businesses", label: "Brands & companies grown" },
-  { value: "50+", raw: 50, unit: "Students", label: "Every year" },
+  { value: "70+", raw: 70, unit: "Artists & Public Figures", label: "Digital growth & marketing" },
+  { value: "300+", raw: 300, unit: "Businesses & Brands", label: "Across multiple industries" },
+  { value: "50+", raw: 50, unit: "Students", label: "Trained every year" },
 ];
 
-export const reviews = [1, 2, 3, 4, 5].map((n) => ({
-  slot: `review-${n}`, quote: "Add client quote here.", name: "Client name", role: "Role, Company",
+const partnerBase = [
+  { name: "Khachatryan Construction", category: "Construction & Architecture, Arm", logo: "/assets/partners/partner-khachatryan-construction.png" },
+  { name: "Sona Abrahamyan", category: "TV host, Journalist, YouTuber, LA", logo: "/assets/partners/partner-sona-abrahamyan.png" },
+  { name: "Iveta Mukuchyan", category: "Singer, Songwriter", logo: "/assets/partners/partner-iveta-mukuchyan.png" },
+  { name: "Doc Zara", category: "AGNP-C, LA", logo: "/assets/partners/partner-doc-zara.png" },
+  { name: "EUBC 2022", category: "Men’s Boxing Championship, Arm", logo: "/assets/partners/partner-eubc-boxing-championship.png" },
+  { name: "Arevik Music Centre", category: "Performing Arts Studio, LA", logo: "/assets/partners/partner-arevik-music-centre.png" },
+  { name: "Eiffel", category: "Swiss Watches Store, Arm", logo: "/assets/partners/partner-eiffel-swiss-watches.png" },
+  { name: "Hayk Petrosyan", category: "Singer, Actor", logo: "/assets/partners/partner-hayk-petrosyan.png" },
+  { name: "BeUp Production", category: "Production Company, LA", logo: "/assets/partners/partner-beup-production.png" },
+  { name: "Zavant Aesthetics", category: "Medical Spa, LA", logo: "/assets/partners/partner-zavant-aesthetics.png" },
+  { name: "Aram Mp3", category: "Singer, Songwriter", logo: "/assets/partners/partner-aram-mp3.png" },
+  { name: "Media Star Academy", category: "Media School, LA", logo: "/assets/partners/partner-media-star-academy.png" },
+  { name: "Sevak Amroyan", category: "Singer", logo: "/assets/partners/partner-sevak-amroyan.png" },
+  { name: "Dr Sirak", category: "Anesthesiologist and Master injector, LA", logo: "/assets/partners/partner-dr-sirak.png" },
+  { name: "Station Collective", category: "Production Company, Arm", logo: "/assets/partners/partner-station-collective.png" },
+  { name: "Mkrtich Arzumanyan", category: "Actor", logo: "/assets/partners/partner-mkrtich-arzumanyan.png" },
+  { name: "Eurovision Song Contest", category: "Music Contest, EU", logo: "/assets/partners/partner-eurovision-armenia.png" },
+  { name: "Patmi", category: "Software Company, USA", logo: "/assets/partners/partner-patmi.png" },
+  { name: "Hakazruyc", category: "YouTube Program, Arm", logo: "/assets/partners/partner-hakazruyc.png" },
+];
+
+export const partners = [...partnerBase, ...partnerBase].map((p, i) => ({
+  ...p,
+  slot: `partner-${(i % partnerBase.length) + 1}`,
 }));
 
 export type CourseLevel = {
@@ -260,12 +283,18 @@ export const pfProjects: PortfolioProject[] = [
 ];
 
 export const team = [
-  { slot: "team-1", name: "Tatev Khachatryan", role: "CEO, Founder", photo: "/assets/team-tatev-khachatryan.jpg" },
-  { slot: "team-2", name: "David Miroyan", role: "LA Partner, Creative Director", photo: "/assets/team-david-miroyan.jpg" },
-  { slot: "team-3", name: "Mariam Gyozalian", role: "Digital Marketing Specialist", photo: "/assets/team-mariam-gyozalian.jpg" },
-  { slot: "team-4", name: "Aza Martoyan", role: "Digital Marketing Specialist", photo: "/assets/team-aza-martoyan.jpg" },
-  { slot: "team-5", name: "Mane Sargsyan", role: "Graphic Designer", photo: "/assets/team-mane-sargsyan.jpg" },
-  { slot: "team-6", name: "Edita Tumanyan", role: "Lead Developer", photo: "/assets/edita-tumanyan.jpg" },
+  { slot: "team-1", name: "Tatev Khachatryan", role: "CEO, Founder", photo: "/assets/team-tatev-khachatryan.jpg",
+    bio: "Nine Meta certifications and ten years building digital strategy for artists and brands across Armenia and the US." },
+  { slot: "team-2", name: "David Miroyan", role: "LA Partner, Creative Director", photo: "/assets/team-david-miroyan.jpg",
+    bio: "Leads creative direction and artist partnerships from LA, connecting Armenian talent with the US market." },
+  { slot: "team-3", name: "Mariam Gyozalian", role: "Digital Marketing Specialist", photo: "/assets/team-mariam-gyozalian.jpg", imagePosition: "50% 5%", imageScale: 1.3,
+    bio: "Plans and runs performance campaigns across paid social and search for TapTag's business clients." },
+  { slot: "team-4", name: "Aza Martoyan", role: "Digital Marketing Specialist", photo: "/assets/team-aza-martoyan.jpg", imagePosition: "50% 15%",
+    bio: "Manages targeting and optimization across Meta, TikTok, and Google Ads for growing brands." },
+  { slot: "team-5", name: "Mane Sargsyan", role: "Graphic Designer", photo: "/assets/team-mane-sargsyan.jpg", imagePosition: "50% 15%",
+    bio: "Designs the visual identity behind every campaign, from social creative to brand systems." },
+  { slot: "team-6", name: "Edita Tumanyan", role: "Lead Developer", photo: "/assets/edita-tumanyan.jpg", imagePosition: "50% 15%",
+    bio: "Builds and maintains the websites and digital tools that power TapTag and its clients." },
 ];
 
 export const certs = [

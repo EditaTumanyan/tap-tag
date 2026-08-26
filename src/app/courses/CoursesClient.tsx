@@ -47,14 +47,15 @@ export default function CoursesClient() {
             const isExpanded = expanded === c.num;
             const accent = courseAccents[c.num];
             return (
-              <div key={c.num} className={`${hoverLift} border-[#ecebf5]`} style={{ borderWidth: 1, borderStyle: "solid", borderRadius: 12, overflow: "hidden", background: "#fff", display: "flex", flexDirection: "column" }}>
+              <div key={c.num} className={`${hoverLift} border-[#ecebf5]`} style={{ borderWidth: 1.5, borderStyle: "solid", borderRadius: 16, overflow: "hidden", background: "#fff", display: "flex", flexDirection: "column" }}>
                 <div style={{ background: "#f4f4f6", padding: "44px 28px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <GlyphIcon paths={coursePaths[c.num]} color={accent.accent} size={56} strokeWidth={1.5} />
                 </div>
-                <div style={{ padding: "24px 28px 28px", display: "flex", flexDirection: "column", flex: 1 }}>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, marginBottom: 16 }}>
-                    <span style={{ background: accent.accent, color: "#fff", fontSize: 13, fontWeight: 700, padding: "6px 14px", borderRadius: 999, fontFamily: "'Nunito',sans-serif" }}>{c.price}</span>
-                    <span style={{ fontSize: 14, color: "#8a84a8" }}>{c.duration}</span>
+                <div style={{ padding: "28px 28px 28px", display: "flex", flexDirection: "column", flex: 1 }}>
+                  <div style={{ marginBottom: 18 }}>
+                    <span style={{ display: "inline-block", background: accent.accent, color: "#fff", fontFamily: "'Nunito',sans-serif", fontSize: 13, fontWeight: 700, padding: "6px 16px", borderRadius: 999 }}>
+                      {c.duration}
+                    </span>
                   </div>
                   <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: accent.accent, fontWeight: 700, marginBottom: 8 }}>
                     {c.audience} · {c.levels.length} levels
@@ -65,14 +66,14 @@ export default function CoursesClient() {
                     <Link
                       href="/contact"
                       className="hover:-translate-y-0.5 hover:opacity-90"
-                      style={{ background: accent.accent, color: "#fff", border: "none", padding: "14px 22px", borderRadius: 6, fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%", textAlign: "center", textDecoration: "none", display: "block", transition: "transform .18s,box-shadow .18s,opacity .18s" }}
+                      style={{ background: accent.accent, color: "#fff", border: "none", padding: "14px 22px", borderRadius: 8, fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%", textAlign: "center", textDecoration: "none", display: "block", transition: "transform .18s,box-shadow .18s,opacity .18s" }}
                     >
                       {c.cta}
                     </Link>
                     <button
                       onClick={() => setExpanded(isExpanded ? null : c.num)}
                       className="border-[#e3e0ee] text-[#57517a] hover:border-[#f97316] hover:text-[#f97316]"
-                      style={{ background: isExpanded ? accent.panel : "transparent", borderWidth: 1, borderStyle: "solid", padding: "12px 22px", borderRadius: 6, fontFamily: "'Nunito',sans-serif", fontWeight: 600, fontSize: 14, cursor: "pointer", width: "100%", transition: "background .2s,border-color .2s,color .2s" }}
+                      style={{ background: isExpanded ? accent.panel : "transparent", borderWidth: 1, borderStyle: "solid", padding: "12px 22px", borderRadius: 8, fontFamily: "'Nunito',sans-serif", fontWeight: 600, fontSize: 14, cursor: "pointer", width: "100%", transition: "background .2s,border-color .2s,color .2s" }}
                     >
                       {isExpanded ? "Hide curriculum" : "View curriculum"}
                     </button>

@@ -3,8 +3,11 @@ import Image from "next/image";
 import ImageSlot from "@/components/ImageSlot";
 import GlyphIcon from "@/components/GlyphIcon";
 import CtaBanner from "@/components/CtaBanner";
+import TeamGrid from "@/components/TeamGrid";
 import { coreValuePaths } from "@/data/glyphs";
-import { team, certs, coreValues } from "@/data/content";
+import { certs, coreValues } from "@/data/content";
+
+const certsLoop = [...certs, ...certs];
 
 export const metadata: Metadata = {
   title: "About Us — TapTag",
@@ -51,41 +54,36 @@ export default function AboutPage() {
           Meet Our <span style={{ color: "#f97316" }}>Team</span>
         </h2>
         <p style={{ fontSize: 16, color: "#57517a", margin: "0 0 48px" }}>The people behind it.</p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6" style={{ maxWidth: 1100, margin: "0 auto", gap: "32px 24px" }}>
-          {team.map((m) => (
-            <div key={m.slot}>
-              <ImageSlot
-                src={"photo" in m ? m.photo : undefined}
-                alt={m.name}
-                placeholder="Photo"
-                style={{ width: 120, height: 120, margin: "0 auto 18px", border: "3px solid #f9d9c0", borderRadius: "50%", background: "#f6dcd2" }}
-              />
-              <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 16, fontWeight: 700, margin: "0 0 6px", color: "#2b2733" }}>{m.name}</h3>
-              <p style={{ fontSize: 14, color: "#57517a", margin: 0 }}>{m.role}</p>
-            </div>
-          ))}
-        </div>
+        <TeamGrid />
       </div>
 
-      <div style={{ padding: "64px 24px" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+      <div style={{ padding: "64px 0", overflow: "hidden" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
           <div style={{ textAlign: "center", marginBottom: 14 }}>
             <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 32, fontWeight: 700, margin: "0 0 12px", color: "#2b2733" }}>
               Founder <span style={{ color: "#f97316" }}>Certifications</span>
             </h2>
             <p style={{ fontSize: 17, color: "#57517a", margin: "0 0 40px" }}>Meta certifications held by Tatev Khachatryan, verified on Credly.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: 24 }}>
-            {certs.map((c) => (
-              <div key={c.name} className={`${hoverLift} border-[#e5e2f0]`} style={{ background: "#fff", borderWidth: 1, borderStyle: "solid", borderRadius: 14, padding: "24px 22px 22px", display: "flex", flexDirection: "column" }}>
+        </div>
+        <div style={{ position: "relative" }}>
+          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 100, background: "linear-gradient(90deg,#FAFAF8,rgba(250,250,248,0))", zIndex: 2, pointerEvents: "none" }} />
+          <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 100, background: "linear-gradient(270deg,#FAFAF8,rgba(250,250,248,0))", zIndex: 2, pointerEvents: "none" }} />
+          <div style={{ display: "flex", width: "max-content", animation: "partnerMarquee 32s linear infinite", padding: "12px 0" }}>
+            {certsLoop.map((c, i) => (
+              <div
+                key={`${c.name}-${i}`}
+                className={`${hoverLift} border-[#e5e2f0]`}
+                style={{ flex: "0 0 auto", width: 220, marginRight: 24, background: "#fff", borderWidth: 1, borderStyle: "solid", borderRadius: 14, padding: "26px 24px 24px", display: "flex", flexDirection: "column" }}
+              >
                 {c.available ? (
-                  <Image src={c.src} alt={c.name} width={120} height={120} style={{ width: 120, height: 120, objectFit: "contain", margin: "8px auto 24px" }} />
+                  <Image src={c.src} alt={c.name} width={110} height={110} style={{ width: 110, height: 110, objectFit: "contain", margin: "6px auto 22px" }} />
                 ) : (
                   <div
                     style={{
-                      width: 120,
-                      height: 120,
-                      margin: "8px auto 24px",
+                      width: 110,
+                      height: 110,
+                      margin: "6px auto 22px",
                       borderRadius: "50%",
                       background: "linear-gradient(135deg,#f3e8ff,#fde8d7)",
                       display: "flex",
@@ -102,11 +100,13 @@ export default function AboutPage() {
                     Badge image
                   </div>
                 )}
-                <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 16, fontWeight: 700, margin: "0 0 6px", color: "#2b2733", lineHeight: 1.35 }}>{c.name}</h3>
-                <p style={{ fontSize: 15, color: "#57517a", margin: "auto 0 0" }}>{c.issuer}</p>
+                <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 15, fontWeight: 700, margin: "0 0 6px", color: "#2b2733", lineHeight: 1.35 }}>{c.name}</h3>
+                <p style={{ fontSize: 14, color: "#57517a", margin: "auto 0 0" }}>{c.issuer}</p>
               </div>
             ))}
           </div>
+        </div>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
           <div style={{ textAlign: "center", marginTop: 36 }}>
             <a
               href="https://www.credly.com/users/tatevik-khachatryan/badges"

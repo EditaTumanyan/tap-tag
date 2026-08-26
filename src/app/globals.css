@@ -19,6 +19,15 @@ body {
   }
 }
 
+@keyframes partnerMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .fade-up {
   animation: fadeUp 0.5s ease both;
 }
