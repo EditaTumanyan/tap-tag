@@ -11,7 +11,7 @@ const certsLoop = [...certs, ...certs, ...certs, ...certs];
 
 export const metadata: Metadata = {
   title: "About Us — TapTag",
-  description: "Since 2015, TapTag has been the strategic engine behind 100+ celebrities and 200+ global brands, working across the Armenian and US markets.",
+  description: "Founded in Armenia in 2015, TapTag has worked with 300+ businesses and 70+ artists and public figures across Armenia, the United States, and international markets.",
 };
 
 const hoverLift =
@@ -22,10 +22,10 @@ export default function AboutPage() {
     <div className="fade-up">
       <div style={{ textAlign: "center", padding: "72px 24px 56px" }}>
         <h1 className="text-[34px] md:text-[46px] lg:text-[60px]" style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, margin: "0 0 20px", color: "#2b2733", lineHeight: 1.08 }}>
-          Our Story, <span style={{ color: "#f97316" }}>Our Mission</span>
+          Our Story. Our Mission. <span style={{ color: "#f97316" }}>Our Impact.</span>
         </h1>
         <p style={{ fontSize: 18, color: "#57517a", maxWidth: 720, margin: "0 auto", lineHeight: 1.6 }}>
-          Building digital growth through precision, creative vision, and an unwavering commitment to client results.
+          Building digital growth through strategy, creativity, and a relentless focus on results.
         </p>
       </div>
 
@@ -38,13 +38,16 @@ export default function AboutPage() {
             Who <span style={{ color: "#f97316" }}>We Are</span>
           </h2>
           <p style={{ fontSize: 16, color: "#57517a", lineHeight: 1.75, margin: "0 0 18px" }}>
-            Since 2015, we&rsquo;ve been the strategic engine behind 100+ celebrities and 200+ global brands. TapTag started as a small team of digital marketers and grew into a full-service agency working across the Armenian and US markets.
+            Founded in Armenia in 2015, TapTag has grown from a small team of digital marketers into a full-service digital marketing agency working across Armenia, the United States, and international markets.
           </p>
           <p style={{ fontSize: 16, color: "#57517a", lineHeight: 1.75, margin: "0 0 18px" }}>
-            Our mission is to help businesses and artists harness the full potential of digital platforms. We combine precision targeting with data-driven content strategies to build campaigns that don&rsquo;t just reach audiences — they convert them.
+            We help businesses, artists, and public figures turn digital opportunities into measurable growth. By combining strategic thinking, creative storytelling, data-driven marketing, and hands-on execution, we build digital strategies that connect brands and talent with the right audiences and turn attention into meaningful results.
+          </p>
+          <p style={{ fontSize: 16, color: "#57517a", lineHeight: 1.75, margin: "0 0 18px" }}>
+            Over the years, we&rsquo;ve worked with 300+ businesses and 70+ artists and public figures, while contributing to the digital success of major projects across music, entertainment, sports, and culture — from Eurovision and Junior Eurovision to the European Boxing Championship, concerts, album releases, and major entertainment campaigns.
           </p>
           <p style={{ fontSize: 16, color: "#57517a", lineHeight: 1.75, margin: 0 }}>
-            Today we operate at the intersection of two markets, scaling brands and careers globally with measurable ROI at every step.
+            Today, TapTag operates at the intersection of strategy, creativity, technology, and performance, helping businesses and careers grow across borders.
           </p>
         </div>
       </div>
@@ -53,7 +56,7 @@ export default function AboutPage() {
         <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 32, fontWeight: 700, margin: "0 0 12px", color: "#2b2733" }}>
           Meet Our <span style={{ color: "#f97316" }}>Team</span>
         </h2>
-        <p style={{ fontSize: 16, color: "#57517a", margin: "0 0 48px" }}>The people behind it.</p>
+        <p style={{ fontSize: 16, color: "#57517a", margin: "0 0 48px" }}>The people behind the strategy, creativity, and results.</p>
         <TeamGrid />
       </div>
 
@@ -61,9 +64,9 @@ export default function AboutPage() {
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
           <div style={{ textAlign: "center", marginBottom: 14 }}>
             <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 32, fontWeight: 700, margin: "0 0 12px", color: "#2b2733" }}>
-              Founder <span style={{ color: "#f97316" }}>Certifications</span>
+              Industry-Certified <span style={{ color: "#f97316" }}>Expertise</span>
             </h2>
-            <p style={{ fontSize: 17, color: "#57517a", margin: "0 0 40px" }}>Meta certifications held by Tatev Khachatryan, verified on Credly.</p>
+            <p style={{ fontSize: 17, color: "#57517a", margin: "0 0 40px" }}>TapTag&rsquo;s Meta certifications, held by our founder and verified through Credly.</p>
           </div>
         </div>
         <div style={{ position: "relative" }}>
@@ -119,7 +122,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <CtaBanner heading={<>Ready to Start? <span style={{ color: "#ec4899" }}>Talk to Our Team</span></>} subtext="Let's discuss how we can scale your digital presence and hit your growth goals." />
+      <CtaBanner heading={<>Ready to Grow <span style={{ color: "#ec4899" }}>With TapTag?</span></>} subtext="Let's talk about your goals and explore how we can turn your next opportunity into measurable growth." />
     </div>
   );
 }

@@ -75,12 +75,14 @@ export default function ServicesClient() {
       >
         <div>
           <h1 className="text-[36px] md:text-[50px] lg:text-[66px]" style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, margin: "0 0 24px", color: "#2b2733", lineHeight: 1.06 }}>
-            Our Full Spectrum of <span style={gradientText}>Digital Services</span>
+            Digital Marketing Services <span style={gradientText}>Built for Growth</span>
           </h1>
-          <p style={{ fontSize: 17, color: "#57517a", lineHeight: 1.7, margin: "0 0 32px", maxWidth: 520 }}>
-            From strategic planning to execution and growth, we provide comprehensive digital marketing solutions tailored to transform your brand&rsquo;s online presence and drive measurable results.
+          <p style={{ fontSize: 17, color: "#57517a", lineHeight: 1.7, margin: "0 0 20px", maxWidth: 520 }}>
+            With over a decade of experience, TapTag combines creative thinking, strategic expertise, and technical execution to help brands grow in an increasingly digital world. From strategy and content to performance marketing, development, and analytics, we build integrated solutions designed around your goals, audience, and market.
           </p>
-          <span style={{ fontSize: 16, color: "#57517a" }}>100+ celebrities and 200+ brands since 2015</span>
+          <p style={{ fontSize: 17, color: "#57517a", lineHeight: 1.7, margin: "0 0 32px", maxWidth: 520 }}>
+            Whether you&rsquo;re a business looking to scale or an artist or public figure building influence, our services are designed to turn digital presence into measurable results.
+          </p>
         </div>
         <ImageSlot src="/assets/services-hero.jpg" alt="Digital marketing dashboard and social platforms" placeholder="Services hero image" style={{ width: "100%", aspectRatio: "16/10", borderRadius: 14 }} />
       </div>
@@ -88,6 +90,9 @@ export default function ServicesClient() {
       <div style={{ height: 90, background: "linear-gradient(180deg,#e9d5ff,#FAFAF8)" }} />
 
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px 80px" }}>
+        <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(26px,3.4vw,38px)", fontWeight: 700, margin: "0 0 32px", color: "#2b2733", textAlign: "center" }}>
+          Explore Our Services
+        </h2>
         <div style={{ display: "flex", justifyContent: "center", marginBottom: 48, overflowX: "auto" }}>
           <div style={{ display: "inline-flex", background: "#f4f2f9", borderRadius: 999, padding: 6 }}>
             <button
@@ -105,7 +110,7 @@ export default function ServicesClient() {
                 color: tab === "business" ? "#fff" : "#57517a",
               }}
             >
-              For Businesses
+              For Businesses &amp; Brands
             </button>
             <button
               onClick={() => setTab("artist")}
@@ -122,7 +127,7 @@ export default function ServicesClient() {
                 color: tab === "artist" ? "#fff" : "#57517a",
               }}
             >
-              For Artists &amp; Celebrities
+              For Artists &amp; Public Figures
             </button>
             <button
               onClick={() => setTab("consulting")}
@@ -147,10 +152,10 @@ export default function ServicesClient() {
         {tab === "business" && (
           <div>
             <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(28px,4vw,44px)", fontWeight: 700, margin: "0 0 16px", color: "#2b2733", textAlign: "center" }}>
-              Strategy &amp; <span style={{ color: "#6d28d9" }}>Execution</span>
+              Digital Solutions for <span style={{ color: "#6d28d9" }}>Businesses &amp; Brands</span>
             </h2>
             <p style={{ fontSize: 17, color: "#57517a", lineHeight: 1.7, margin: "0 auto 48px", textAlign: "center", maxWidth: 860 }}>
-              TapTag provides the data-driven engine your business needs to scale. From strategy to execution, our solutions deliver measurable ROI across Armenian and US markets. We help businesses leverage social media, search engines, app stores, and digital platforms to reach the right audience, convert prospects, and grow revenue sustainably.
+              TapTag provides the strategy, creativity, and technology businesses need to grow. From market research and targeted advertising to content, SEO, social media, development, and analytics, our solutions are designed to connect your brand with the right audience, drive measurable results, and create lasting business impact.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: 28 }}>
               {businessServices.map((s, i) => (
@@ -176,10 +181,10 @@ export default function ServicesClient() {
         {tab === "artist" && (
           <div>
             <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(28px,4vw,44px)", fontWeight: 700, margin: "0 0 16px", color: "#2b2733", textAlign: "center" }}>
-              Reach &amp; <span style={artistGradientText}>Growth</span>
+              Digital Solutions for <span style={artistGradientText}>Artists &amp; Public Figures</span>
             </h2>
             <p style={{ fontSize: 17, color: "#57517a", lineHeight: 1.7, margin: "0 auto 48px", textAlign: "center", maxWidth: 880 }}>
-              TapTag is a global digital marketing agency specializing in music marketing, artist branding, and creator growth. We help musicians, singers, and public figures grow their audience, monetize their content, and build long-term influence across Spotify, YouTube, TikTok, Instagram, and major music platforms. By combining creative direction with data-driven promotion, we turn talent into a scalable digital business in Armenian, US, and international markets.
+              TapTag is a digital marketing agency specializing in music marketing, artist branding, and creator growth. We help musicians, singers, and public figures grow their audiences, monetize their work, and build lasting influence across Spotify, YouTube, TikTok, Instagram, and major digital platforms. By combining creative direction, strategic marketing, and data-driven insights, we turn talent and influence into sustainable digital growth across Armenian, US, and international markets.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: 28 }}>
               {artistServices.map((s, i) => (
@@ -222,7 +227,7 @@ export default function ServicesClient() {
         )}
       </div>
 
-      <CtaBanner heading={<>Ready to Start? <span style={{ color: "#ec4899" }}>Talk to Our Team</span></>} subtext="Let's discuss how we can scale your digital presence and hit your growth goals." />
+      <CtaBanner heading={<>Ready to take your digital presence to the <span style={{ color: "#ec4899" }}>next level?</span></>} buttonLabel="Start the conversation" />
 
       {mounted && openSvc && createPortal(
         <div
@@ -241,7 +246,7 @@ export default function ServicesClient() {
                 ×
               </button>
               <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase", color: accent, fontWeight: 700, marginBottom: 12 }}>
-                {openSvc.audience === "business" ? "For Businesses" : "For Artists & Celebrities"}
+                {openSvc.audience === "business" ? "For Businesses & Brands" : "For Artists & Public Figures"}
               </div>
               <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 30, fontWeight: 700, color: "#2b2733", margin: 0, lineHeight: 1.15 }}>{openSvc.item.title}</h3>
             </div>

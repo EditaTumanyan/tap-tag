@@ -17,8 +17,8 @@ export const glyphs: Record<string, string[]> = {
   gear: ["M12 15a3 3 0 100-6 3 3 0 000 6", "M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-2.9 1.2V21a2 2 0 11-4 0v-.1A1.7 1.7 0 007.1 19.7l-.1.1a2 2 0 11-2.8-2.8l.1-.1A1.7 1.7 0 003 14.6a2 2 0 110-4h.1A1.7 1.7 0 004.3 7.1l-.1-.1a2 2 0 112.8-2.8l.1.1A1.7 1.7 0 0010 3.4V3a2 2 0 114 0v.4a1.7 1.7 0 002.9 1.2l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 001.2 2.9H21a2 2 0 110 4h-.4a1.7 1.7 0 00-1.2.7z"],
 };
 
-export const bizGlyphs = ["chart", "target", "users", "doc", "star", "search", "spark", "trend", "code"];
-export const artistGlyphs = ["star", "users", "play", "spark", "note", "megaphone", "shield", "globe"];
+export const bizGlyphs = ["chart", "pen", "target", "users", "spark", "star", "search", "code", "trend"];
+export const artistGlyphs = ["star", "trend", "play", "users", "search", "note", "shield", "chart", "doc"];
 
 export const coursePaths: Record<string, string[]> = {
   "01": ["M12 7v13", "M12 7a4 4 0 00-4-4H3v13h5a4 4 0 014 4", "M12 7a4 4 0 014-4h5v13h-5a4 4 0 00-4 4"],

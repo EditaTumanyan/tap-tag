@@ -17,10 +17,10 @@ export default function CoursesClient() {
     <div className="fade-up">
       <div style={{ textAlign: "center", padding: "72px 24px 56px" }}>
         <h1 className="text-[38px] md:text-[54px] lg:text-[68px]" style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, margin: "0 0 20px", color: "#2b2733", lineHeight: 1.08 }}>
-          Choose Your <span style={{ color: "#f97316" }}>Professional Pathway</span>
+          Choose Your <span style={{ color: "#f97316" }}>Professional Path</span>
         </h1>
         <p style={{ fontSize: 18, color: "#57517a", maxWidth: 680, margin: "0 auto", lineHeight: 1.6 }}>
-          Three tracks. Pick the one that matches where you&rsquo;re headed.
+          Whether you&rsquo;re starting a digital marketing career, growing a business, or building an artist&rsquo;s career, our practical training gives you the skills and strategies to succeed in the real world — from social media fundamentals to advanced digital advertising.
         </p>
       </div>
 
@@ -28,7 +28,7 @@ export default function CoursesClient() {
 
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px 72px" }}>
         <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(28px,4vw,44px)", fontWeight: 700, margin: "0 0 28px", color: "#2b2733", textAlign: "center" }}>
-          Course <span style={{ color: "#f97316" }}>Catalog</span>
+          Explore Our <span style={{ color: "#f97316" }}>Courses</span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ background: "#1b1738", borderRadius: 16, padding: "32px 32px", marginBottom: 48, gap: 28 }}>
@@ -75,12 +75,13 @@ export default function CoursesClient() {
                       className="border-[#e3e0ee] text-[#57517a] hover:border-[#f97316] hover:text-[#f97316]"
                       style={{ background: isExpanded ? accent.panel : "transparent", borderWidth: 1, borderStyle: "solid", padding: "12px 22px", borderRadius: 8, fontFamily: "'Nunito',sans-serif", fontWeight: 600, fontSize: 14, cursor: "pointer", width: "100%", transition: "background .2s,border-color .2s,color .2s" }}
                     >
-                      {isExpanded ? "Hide curriculum" : "View curriculum"}
+                      {isExpanded ? "Hide Curriculum" : "View Curriculum"}
                     </button>
                   </div>
                 </div>
                 {isExpanded && (
                   <div style={{ display: "flex", flexDirection: "column", gap: 16, borderTop: "1px solid #ecebf5", padding: "24px 28px 28px", background: "#fafafc" }}>
+                    <h4 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 15, fontWeight: 700, margin: "0 0 4px", color: accent.accent }}>{c.name} — Curriculum</h4>
                     {c.levels.map((lvl) => (
                       <div key={lvl.title}>
                         <h4 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 16, fontWeight: 700, margin: "0 0 6px", color: "#2b2733" }}>{lvl.title}</h4>
@@ -107,7 +108,7 @@ export default function CoursesClient() {
           <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(26px,4vw,36px)", fontWeight: 700, margin: "0 0 12px", color: "#2b2733", textAlign: "center" }}>
             Strategic <span style={{ color: "#f97316" }}>Add-ons</span>
           </h2>
-          <p style={{ fontSize: 16, color: "#57517a", textAlign: "center", margin: "0 0 40px" }}>Included with every path.</p>
+          <p style={{ fontSize: 16, color: "#57517a", textAlign: "center", margin: "0 0 40px" }}>Included with every course</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: 24 }}>
             {addons.map((a) => (
               <div key={a.title} className={`${hoverLift} border-[#ecebf5]`} style={{ background: "#fff", borderWidth: 1, borderStyle: "solid", borderRadius: 12, padding: 28 }}>
@@ -136,8 +137,9 @@ export default function CoursesClient() {
       </div>
 
       <CtaBanner
-        heading={<>Ready to Start? <span style={{ color: "#ec4899" }}>Talk to Our Team</span></>}
-        subtext="Pick a path and our team will contact you within 24 hours to build your schedule."
+        heading={<>Ready to Choose <span style={{ color: "#ec4899" }}>Your Path?</span></>}
+        subtext="Tell us what you want to achieve, and we'll help you find the right course, level, and schedule for your goals."
+        buttonLabel="Get in touch"
       />
     </div>
   );
