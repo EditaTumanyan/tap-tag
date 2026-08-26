@@ -116,7 +116,7 @@ export default function Home() {
               style={{ position: "relative", overflow: "hidden", cursor: "pointer", borderRadius: 14, padding: "44px 36px", textDecoration: "none", display: "block" }}
             >
               <div style={{ width: 64, height: 64, borderRadius: 16, background: "rgba(168,85,247,0.16)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 24 }}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c084fc" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2.5" y="7" width="19" height="13" rx="2.5" />
                   <path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2" />
                   <path d="M2.5 12h19" />
@@ -187,7 +187,7 @@ export default function Home() {
         <div style={{ position: "relative" }}>
           <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 100, background: "linear-gradient(90deg,#FAFAF8,rgba(250,250,248,0))", zIndex: 2, pointerEvents: "none" }} />
           <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 100, background: "linear-gradient(270deg,#FAFAF8,rgba(250,250,248,0))", zIndex: 2, pointerEvents: "none" }} />
-          <div style={{ display: "flex", width: "max-content", animation: "partnerMarquee 48s linear infinite", padding: "16px 0" }}>
+          <div style={{ display: "flex", width: "max-content", animation: "partnerMarquee 45s linear infinite", padding: "16px 0" }}>
             {partners.map((pn, i) => (
               <div
                 key={`${pn.slot}-${i}`}

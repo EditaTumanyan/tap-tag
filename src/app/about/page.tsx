@@ -7,7 +7,7 @@ import TeamGrid from "@/components/TeamGrid";
 import { coreValuePaths } from "@/data/glyphs";
 import { certs, coreValues } from "@/data/content";
 
-const certsLoop = [...certs, ...certs];
+const certsLoop = [...certs, ...certs, ...certs, ...certs];
 
 export const metadata: Metadata = {
   title: "About Us — TapTag",
@@ -69,36 +69,15 @@ export default function AboutPage() {
         <div style={{ position: "relative" }}>
           <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 100, background: "linear-gradient(90deg,#FAFAF8,rgba(250,250,248,0))", zIndex: 2, pointerEvents: "none" }} />
           <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 100, background: "linear-gradient(270deg,#FAFAF8,rgba(250,250,248,0))", zIndex: 2, pointerEvents: "none" }} />
-          <div style={{ display: "flex", width: "max-content", animation: "partnerMarquee 32s linear infinite", padding: "12px 0" }}>
+          <div style={{ display: "flex", width: "max-content", animation: "partnerMarquee 130s linear infinite", padding: "12px 0" }}>
             {certsLoop.map((c, i) => (
               <div
                 key={`${c.name}-${i}`}
                 className={`${hoverLift} border-[#e5e2f0]`}
                 style={{ flex: "0 0 auto", width: 220, marginRight: 24, background: "#fff", borderWidth: 1, borderStyle: "solid", borderRadius: 14, padding: "26px 24px 24px", display: "flex", flexDirection: "column" }}
               >
-                {c.available ? (
+                {c.available && (
                   <Image src={c.src} alt={c.name} width={110} height={110} style={{ width: 110, height: 110, objectFit: "contain", margin: "6px auto 22px" }} />
-                ) : (
-                  <div
-                    style={{
-                      width: 110,
-                      height: 110,
-                      margin: "6px auto 22px",
-                      borderRadius: "50%",
-                      background: "linear-gradient(135deg,#f3e8ff,#fde8d7)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "#8a7fb5",
-                      fontFamily: "'Nunito Sans',sans-serif",
-                      fontSize: 12,
-                      fontWeight: 600,
-                      textAlign: "center",
-                      padding: 8,
-                    }}
-                  >
-                    Badge image
-                  </div>
                 )}
                 <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 15, fontWeight: 700, margin: "0 0 6px", color: "#2b2733", lineHeight: 1.35 }}>{c.name}</h3>
                 <p style={{ fontSize: 14, color: "#57517a", margin: "auto 0 0" }}>{c.issuer}</p>

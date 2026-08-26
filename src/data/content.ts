@@ -300,8 +300,13 @@ export const team = [
 export const certs = [
   { name: "Meta Certified Media Buying Professional", img: "media-buying", available: true },
   { name: "Meta Certified Media Planning Professional", img: "media-planning", available: true },
-  { name: "Meta Certified AI and Performance Marketing Specialist", img: "ai-performance", available: true },
   { name: "Meta Certified Creative Strategy Professional", img: "creative-strategy", available: true },
+  { name: "Meta Certified AI and Performance Marketing Specialist", img: "ai-performance", available: true },
+  { name: "Meta Certified Technical Implementation Specialist", img: "technical-implementation", available: true },
+  { name: "Meta Certified Media Measurement Specialist", img: "media-measurement", available: true },
+  { name: "Meta Certified Community Management", img: "community-management", available: true },
+  { name: "Meta Certified Digital Marketing Associate", img: "digital-marketing-associate", available: true },
+  { name: "Meta Certified Creator Marketing Specialist", img: "creator-marketing", available: true },
 ].map((c) => ({ ...c, src: `/assets/cert-${c.img}.png`, issuer: "Meta" }));
 
 export const coreValues = [

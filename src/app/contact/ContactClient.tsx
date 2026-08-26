@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { audienceOptions } from "@/data/content";
+import { countryCodes } from "@/data/countryCodes";
+
+const PHONE_PATTERN = /^[0-9]{6,14}$/;
 
 const inputStyle: React.CSSProperties = {
   padding: "14px 16px",
@@ -22,6 +25,9 @@ export default function ContactClient() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [dialCode, setDialCode] = useState("+374");
+  const [phone, setPhone] = useState("");
+  const [phoneError, setPhoneError] = useState<string | null>(null);
 
   return (
     <div className="fade-up" style={{ maxWidth: 800, margin: "0 auto", padding: "56px 24px 100px" }}>
@@ -43,6 +49,11 @@ export default function ContactClient() {
           onSubmit={async (e) => {
             e.preventDefault();
             setError(null);
+            setPhoneError(null);
+            if (!PHONE_PATTERN.test(phone)) {
+              setPhoneError("Enter a valid phone number (6–14 digits).");
+              return;
+            }
             setSubmitting(true);
             const form = e.currentTarget;
             const formData = new FormData(form);
@@ -53,7 +64,7 @@ export default function ContactClient() {
                 body: JSON.stringify({
                   name: formData.get("name"),
                   email: formData.get("email"),
-                  phone: formData.get("phone"),
+                  phone: `${dialCode} ${phone}`,
                   company: formData.get("company"),
                   audience,
                   message: formData.get("message"),
@@ -76,7 +87,35 @@ export default function ContactClient() {
             <input required type="email" name="email" placeholder="Email" className={focusClass} style={inputStyle} />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: 20 }}>
-            <input type="tel" name="phone" placeholder="Phone number" className={focusClass} style={inputStyle} />
+            <div>
+              <div style={{ display: "flex", gap: 8 }}>
+                <select
+                  value={dialCode}
+                  onChange={(e) => setDialCode(e.target.value)}
+                  aria-label="Country code"
+                  className={focusClass}
+                  style={{ ...inputStyle, width: 118, flexShrink: 0, paddingLeft: 10, paddingRight: 6 }}
+                >
+                  {countryCodes.map((c) => (
+                    <option key={c.iso2} value={c.dial}>
+                      {c.iso2} {c.dial}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  required
+                  type="tel"
+                  inputMode="numeric"
+                  autoComplete="tel-national"
+                  placeholder="Phone number"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value.replace(/[^0-9]/g, ""))}
+                  className={focusClass}
+                  style={inputStyle}
+                />
+              </div>
+              {phoneError && <p style={{ color: "#dc2626", fontSize: 13, margin: "6px 0 0" }}>{phoneError}</p>}
+            </div>
             <input type="text" name="company" placeholder="Company or brand name" className={focusClass} style={inputStyle} />
           </div>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
