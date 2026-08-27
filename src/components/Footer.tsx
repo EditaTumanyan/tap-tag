@@ -66,7 +66,7 @@ export default function Footer() {
                   <path d="M12 13c0-1.5 1-3 3-3s3 1.5 3 3v4" strokeLinecap="round" />
                 </svg>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={socialIconClass} style={socialIconStyle}>
+              <a href="https://www.instagram.com/taptagdigital" target="_blank" rel="noopener noreferrer" className={socialIconClass} style={socialIconStyle}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
                   <rect x="2" y="2" width="20" height="20" rx="5" />
                   <circle cx="12" cy="12" r="4.5" />

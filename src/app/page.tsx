@@ -187,7 +187,7 @@ export default function Home() {
         <div style={{ position: "relative" }}>
           <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 100, background: "linear-gradient(90deg,#FAFAF8,rgba(250,250,248,0))", zIndex: 2, pointerEvents: "none" }} />
           <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 100, background: "linear-gradient(270deg,#FAFAF8,rgba(250,250,248,0))", zIndex: 2, pointerEvents: "none" }} />
-          <div style={{ display: "flex", width: "max-content", animation: "partnerMarquee 45s linear infinite", padding: "16px 0" }}>
+          <div style={{ display: "flex", width: "max-content", animation: "partnerMarquee 130s linear infinite", padding: "16px 0" }}>
             {partners.map((pn, i) => (
               <div
                 key={`${pn.slot}-${i}`}
