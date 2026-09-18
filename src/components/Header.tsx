@@ -71,10 +71,10 @@ export default function Header() {
         </nav>
 
         <button
-          className="md:hidden"
+          className="flex md:hidden"
           aria-label="Toggle menu"
           onClick={() => setMenuOpen((v) => !v)}
-          style={{ background: "none", border: "none", cursor: "pointer", padding: 8, display: "flex", alignItems: "center", justifyContent: "center" }}
+          style={{ background: "none", border: "none", cursor: "pointer", padding: 8, alignItems: "center", justifyContent: "center" }}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2b2733" strokeWidth="1.8" strokeLinecap="round">
             <line x1="4" y1="7" x2="20" y2="7" style={{ transition: "transform 0.3s ease, opacity 0.3s ease", transformOrigin: "12px 7px", transform: menuOpen ? "rotate(45deg) translate(0, 5px)" : "none" }} />
