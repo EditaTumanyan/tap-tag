@@ -74,19 +74,19 @@ export default function Header() {
           className="md:hidden"
           aria-label="Toggle menu"
           onClick={() => setMenuOpen((v) => !v)}
-          style={{ background: "none", border: "none", cursor: "pointer", padding: 8 }}
+          style={{ background: "none", border: "none", cursor: "pointer", padding: 8, display: "flex", alignItems: "center", justifyContent: "center" }}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2b2733" strokeWidth="1.8" strokeLinecap="round">
-            <line x1="4" y1="7" x2="20" y2="7" />
-            <line x1="4" y1="12" x2="20" y2="12" />
-            <line x1="4" y1="17" x2="20" y2="17" />
+            <line x1="4" y1="7" x2="20" y2="7" style={{ transition: "transform 0.3s ease, opacity 0.3s ease", transformOrigin: "12px 7px", transform: menuOpen ? "rotate(45deg) translate(0, 5px)" : "none" }} />
+            <line x1="4" y1="12" x2="20" y2="12" style={{ transition: "opacity 0.3s ease", opacity: menuOpen ? 0 : 1 }} />
+            <line x1="4" y1="17" x2="20" y2="17" style={{ transition: "transform 0.3s ease, opacity 0.3s ease", transformOrigin: "12px 17px", transform: menuOpen ? "rotate(-45deg) translate(0, -5px)" : "none" }} />
           </svg>
         </button>
       </div>
 
       {menuOpen && (
-        <nav className="md:hidden" style={{ display: "flex", flexDirection: "column", gap: 4, padding: "8px 24px 20px", borderTop: "1px solid #e5e2f0" }}>
-          {navItems.map((item) => {
+        <nav className="md:hidden" style={{ display: "flex", flexDirection: "column", gap: 4, padding: "8px 24px 20px", borderTop: "1px solid #e5e2f0", animation: "navSlideDown 0.25s ease both" }}>
+          {navItems.map((item, i) => {
             const active = pathname === item.href;
             return (
               <Link
@@ -100,6 +100,8 @@ export default function Header() {
                   fontWeight: active ? 600 : 400,
                   padding: "10px 0",
                   textDecoration: "none",
+                  animation: "navItemIn 0.3s ease both",
+                  animationDelay: `${i * 0.06}s`,
                 }}
               >
                 {item.label}
@@ -120,6 +122,8 @@ export default function Header() {
               textDecoration: "none",
               textAlign: "center",
               marginTop: 8,
+              animation: "navItemIn 0.3s ease both",
+              animationDelay: `${navItems.length * 0.06}s`,
             }}
           >
             Book a Call

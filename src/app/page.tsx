@@ -51,11 +51,11 @@ export default function Home() {
           <p style={{ fontSize: 18, color: "#57517a", lineHeight: 1.7, margin: "0 0 36px" }}>
             Since 2015, TapTag has helped 300+ brands and 70+ public figures across Armenia and the United States turn their digital presence into measurable growth. As a full-service digital marketing agency, we combine strategy, creativity, and data to build campaigns that connect brands with the right audiences and deliver real results. From social media and performance marketing to content and brand growth, we create digital strategies designed to make an impact — and deliver measurable ROI.
           </p>
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 12, flexWrap: "nowrap" }}>
             <Link
               href="/contact"
               className="bg-[#e56a78] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(229,106,120,0.55)] hover:bg-[#cc5469]"
-              style={{ ...primaryButton, padding: "16px 34px", fontWeight: 700, fontSize: 16 }}
+              style={{ ...primaryButton, padding: "14px 24px", fontWeight: 700, fontSize: 15, whiteSpace: "nowrap" }}
             >
               Contact Us
             </Link>
@@ -65,14 +65,15 @@ export default function Home() {
                 background: "transparent",
                 color: "#2b2733",
                 border: "1px solid #e0d8ee",
-                padding: "16px 32px",
+                padding: "14px 20px",
                 borderRadius: 6,
                 fontFamily: "'Nunito',sans-serif",
                 fontWeight: 600,
-                fontSize: 16,
+                fontSize: 15,
                 cursor: "pointer",
                 textDecoration: "none",
                 display: "inline-block",
+                whiteSpace: "nowrap",
               }}
             >
               Explore Our Services

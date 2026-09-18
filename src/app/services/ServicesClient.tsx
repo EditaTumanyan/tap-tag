@@ -93,19 +93,14 @@ export default function ServicesClient() {
         <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(26px,3.4vw,38px)", fontWeight: 700, margin: "0 0 32px", color: "#2b2733", textAlign: "center" }}>
           Explore Our Services
         </h2>
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: 48, overflowX: "auto" }}>
+        {/* Desktop pill tabs */}
+        <div className="hidden md:flex" style={{ justifyContent: "center", marginBottom: 48 }}>
           <div style={{ display: "inline-flex", background: "#f4f2f9", borderRadius: 999, padding: 6 }}>
             <button
               onClick={() => setTab("business")}
               style={{
-                padding: "12px 22px",
-                borderRadius: 999,
-                border: "none",
-                fontFamily: "'Nunito',sans-serif",
-                fontWeight: 700,
-                fontSize: 15,
-                cursor: "pointer",
-                whiteSpace: "nowrap",
+                padding: "12px 22px", borderRadius: 999, border: "none",
+                fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, cursor: "pointer", whiteSpace: "nowrap",
                 background: tab === "business" ? "linear-gradient(135deg,#4a3278,#765098)" : "transparent",
                 color: tab === "business" ? "#fff" : "#57517a",
               }}
@@ -115,14 +110,8 @@ export default function ServicesClient() {
             <button
               onClick={() => setTab("artist")}
               style={{
-                padding: "12px 22px",
-                borderRadius: 999,
-                border: "none",
-                fontFamily: "'Nunito',sans-serif",
-                fontWeight: 700,
-                fontSize: 15,
-                cursor: "pointer",
-                whiteSpace: "nowrap",
+                padding: "12px 22px", borderRadius: 999, border: "none",
+                fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, cursor: "pointer", whiteSpace: "nowrap",
                 background: tab === "artist" ? "linear-gradient(125deg,#765098,#973e8f 45%,#973e8f 72%,#e56a78)" : "transparent",
                 color: tab === "artist" ? "#fff" : "#57517a",
               }}
@@ -132,14 +121,8 @@ export default function ServicesClient() {
             <button
               onClick={() => setTab("consulting")}
               style={{
-                padding: "12px 22px",
-                borderRadius: 999,
-                border: "none",
-                fontFamily: "'Nunito',sans-serif",
-                fontWeight: 700,
-                fontSize: 15,
-                cursor: "pointer",
-                whiteSpace: "nowrap",
+                padding: "12px 22px", borderRadius: 999, border: "none",
+                fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, cursor: "pointer", whiteSpace: "nowrap",
                 background: tab === "consulting" ? "#e56a78" : "transparent",
                 color: tab === "consulting" ? "#fff" : "#57517a",
               }}
@@ -147,6 +130,41 @@ export default function ServicesClient() {
               Strategic Consulting
             </button>
           </div>
+        </div>
+
+        {/* Mobile stacked tab cards */}
+        <div className="flex md:hidden" style={{ flexDirection: "column", gap: 12, marginBottom: 36 }}>
+          {[
+            { key: "business" as Tab, label: "For Businesses & Brands", sub: "Strategy, ads, content, SEO & more", gradient: "linear-gradient(135deg,#4a3278,#765098)", dot: "#765098" },
+            { key: "artist" as Tab, label: "For Artists & Public Figures", sub: "Brand building, fanbase growth & PR", gradient: "linear-gradient(125deg,#765098,#973e8f,#e56a78)", dot: "#973e8f" },
+            { key: "consulting" as Tab, label: "Strategic Consulting", sub: "1-on-1 guidance & digital audits", gradient: "#e56a78", dot: "#e56a78" },
+          ].map((t) => (
+            <button
+              key={t.key}
+              onClick={() => setTab(t.key)}
+              style={{
+                width: "100%",
+                background: tab === t.key ? t.gradient : "#fff",
+                border: `2px solid ${tab === t.key ? "transparent" : "#e8e4f2"}`,
+                borderRadius: 16,
+                padding: "18px 20px",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: 14,
+                textAlign: "left",
+                transition: "all 0.2s ease",
+                boxShadow: tab === t.key ? "0 8px 24px -8px rgba(94,63,144,0.35)" : "none",
+              }}
+            >
+              <div style={{ width: 10, height: 10, borderRadius: "50%", background: tab === t.key ? "#fff" : t.dot, flexShrink: 0 }} />
+              <div>
+                <div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, color: tab === t.key ? "#fff" : "#2b2733", marginBottom: 2 }}>{t.label}</div>
+                <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, color: tab === t.key ? "rgba(255,255,255,0.8)" : "#8a84a8" }}>{t.sub}</div>
+              </div>
+              <div style={{ marginLeft: "auto", fontFamily: "'Nunito',sans-serif", fontSize: 18, color: tab === t.key ? "#fff" : "#c4bedd" }}>›</div>
+            </button>
+          ))}
         </div>
 
         {tab === "business" && (
