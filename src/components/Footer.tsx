@@ -3,7 +3,7 @@ import Link from "next/link";
 import { footerLinks } from "@/data/content";
 
 const socialIconStyle = { cursor: "pointer", transition: "color .2s,transform .2s" } as const;
-const socialIconClass = "text-[#6b6485] hover:text-[#f97316] hover:-translate-y-0.5";
+const socialIconClass = "text-[#6b6485] hover:text-[#e56a78] hover:-translate-y-0.5";
 
 export default function Footer() {
   return (
@@ -21,7 +21,7 @@ export default function Footer() {
               <Link
                 key={fl.label}
                 href={fl.href}
-                className="text-[#2b2733] hover:text-[#f97316]"
+                className="text-[#2b2733] hover:text-[#e56a78]"
                 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 16, fontWeight: 400, cursor: "pointer", transition: "color .2s", textDecoration: "none" }}
               >
                 {fl.label}
@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 20 }}>
           <span style={{ fontSize: 13, color: "#9a94b8" }}>© 2026 TapTag. Yerevan, Armenia</span>
-          <Link href="/privacy-policy" className="text-[#9a94b8] hover:text-[#f97316]" style={{ fontSize: 13, textDecoration: "none", transition: "color .2s" }}>
+          <Link href="/privacy-policy" className="text-[#9a94b8] hover:text-[#e56a78]" style={{ fontSize: 13, textDecoration: "none", transition: "color .2s" }}>
             Privacy Policy
           </Link>
         </div>

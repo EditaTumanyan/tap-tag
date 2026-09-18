@@ -7,7 +7,7 @@ import { glyphs } from "@/data/glyphs";
 import { featureBoxes, stats, partners } from "@/data/content";
 
 const gradientText = {
-  background: "linear-gradient(90deg,#9333ea,#ec4899,#f97316)",
+  background: "linear-gradient(90deg,#5e3f90,#973e8f,#e56a78)",
   WebkitBackgroundClip: "text" as const,
   backgroundClip: "text" as const,
   color: "transparent",
@@ -25,7 +25,7 @@ const primaryButton = {
 } as const;
 
 const hoverLift =
-  "hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-18px_rgba(21,18,63,0.28)] hover:border-[#f97316] transition-transform duration-300";
+  "hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-18px_rgba(21,18,63,0.28)] hover:border-[#e56a78] transition-transform duration-300";
 const cardBorder = { borderWidth: 1, borderStyle: "solid" } as const;
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
       >
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
-            <div style={{ width: 8, height: 8, borderRadius: "50%", background: "linear-gradient(135deg,#9333ea,#f97316)" }} />
+            <div style={{ width: 8, height: 8, borderRadius: "50%", background: "linear-gradient(135deg,#5e3f90,#e56a78)" }} />
             <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8a7fb5", fontWeight: 600 }}>
               Digital Marketing Agency
             </span>
@@ -54,7 +54,7 @@ export default function Home() {
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <Link
               href="/contact"
-              className="bg-[#f97316] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(249,115,22,0.55)] hover:bg-[#ea580c]"
+              className="bg-[#e56a78] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(229,106,120,0.55)] hover:bg-[#cc5469]"
               style={{ ...primaryButton, padding: "16px 34px", fontWeight: 700, fontSize: 16 }}
             >
               Contact Us
@@ -79,8 +79,8 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div style={{ background: "linear-gradient(135deg,#9333ea,#ec4899,#f97316)", borderRadius: 18, padding: 14 }}>
-          <ImageSlot src="/assets/hero-growth.jpg" alt="Growth chart illustration" placeholder="Hero image" style={{ width: "100%", aspectRatio: "4/5", borderRadius: 12 }} />
+        <div style={{ borderRadius: 24, overflow: "hidden", boxShadow: "0 24px 64px -12px rgba(94,63,144,0.16), 0 8px 24px -8px rgba(94,63,144,0.08)" }}>
+          <ImageSlot src="/assets/hero-growth.jpg" alt="Growth chart illustration" placeholder="Hero image" style={{ width: "100%", aspectRatio: "4/5" }} />
         </div>
       </div>
 
@@ -93,8 +93,8 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: 28 }}>
           {featureBoxes.map((b) => (
             <div key={b.title} className={`${hoverLift} border-[#f2e9f3]`} style={{ background: "#fff", ...cardBorder, borderRadius: 14, padding: "38px 34px", textAlign: "center" }}>
-              <div style={{ width: 60, height: 60, borderRadius: 14, background: "linear-gradient(135deg,#fce7f3,#f3e8ff)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px" }}>
-                <GlyphIcon paths={glyphs[b.icon]} color="#ec4899" />
+              <div style={{ width: 60, height: 60, borderRadius: 14, background: "linear-gradient(135deg,#f5e0f5,#f3e8ff)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px" }}>
+                <GlyphIcon paths={glyphs[b.icon]} color="#973e8f" />
               </div>
               <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 20, fontWeight: 700, margin: "0 0 12px", color: "#2b2733" }}>{b.title}</h3>
               <p style={{ fontSize: 15, color: "#57517a", lineHeight: 1.6, margin: 0 }}>{b.desc}</p>
@@ -112,7 +112,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: 28 }}>
             <Link
               href="/services?tab=business"
-              className="bg-[#1b1738] hover:-translate-y-2 hover:shadow-[0_26px_56px_-22px_rgba(124,58,237,0.6)] hover:bg-[#241c50] transition-all duration-300"
+              className="bg-[#1b1738] hover:-translate-y-2 hover:shadow-[0_26px_56px_-22px_rgba(94,63,144,0.6)] hover:bg-[#241c50] transition-all duration-300"
               style={{ position: "relative", overflow: "hidden", cursor: "pointer", borderRadius: 14, padding: "44px 36px", textDecoration: "none", display: "block" }}
             >
               <div style={{ width: 64, height: 64, borderRadius: 16, background: "rgba(168,85,247,0.16)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 24 }}>
@@ -135,7 +135,7 @@ export default function Home() {
                 position: "relative",
                 overflow: "hidden",
                 cursor: "pointer",
-                background: "linear-gradient(125deg,#7c3aed,#c026d3 42%,#ec4899 70%,#f97316)",
+                background: "linear-gradient(125deg,#765098,#973e8f 42%,#973e8f 70%,#e56a78)",
                 borderRadius: 14,
                 padding: "44px 36px",
                 textDecoration: "none",
@@ -164,7 +164,7 @@ export default function Home() {
         <div className="grid grid-cols-2 lg:grid-cols-4" style={{ maxWidth: 1180, margin: "0 auto", gap: 24 }}>
           {stats.map((st) => (
             <div key={st.label} className={`${hoverLift} border-[#f4e9e0]`} style={{ position: "relative", textAlign: "center", background: "#fff", ...cardBorder, borderRadius: 18, padding: "32px 20px 28px", overflow: "hidden" }}>
-              <div style={{ position: "absolute", inset: "0 0 auto 0", height: 4, background: "linear-gradient(90deg,#9333ea,#ec4899,#f97316)" }} />
+              <div style={{ position: "absolute", inset: "0 0 auto 0", height: 4, background: "linear-gradient(90deg,#5e3f90,#973e8f,#e56a78)" }} />
               <CountUp
                 target={st.raw}
                 final={st.value}

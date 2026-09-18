@@ -10,14 +10,14 @@ import { glyphs, bizGlyphs, artistGlyphs } from "@/data/glyphs";
 import { businessServices, artistServices, consultingItems, type ServiceItem } from "@/data/content";
 
 const gradientText = {
-  background: "linear-gradient(90deg,#9333ea,#ec4899,#f97316)",
+  background: "linear-gradient(90deg,#5e3f90,#973e8f,#e56a78)",
   WebkitBackgroundClip: "text" as const,
   backgroundClip: "text" as const,
   color: "transparent",
 };
 
 const artistGradientText = {
-  background: "linear-gradient(120deg,#7c3aed,#c026d3,#ec4899)",
+  background: "linear-gradient(120deg,#765098,#973e8f,#973e8f)",
   WebkitBackgroundClip: "text" as const,
   backgroundClip: "text" as const,
   color: "transparent",
@@ -64,8 +64,8 @@ export default function ServicesClient() {
     };
   }, [openSvc]);
 
-  const accent = openSvc?.audience === "business" ? "#7c3aed" : "#ec4899";
-  const headerBg = openSvc?.audience === "business" ? "linear-gradient(120deg,#ede9fe,#f3e8ff)" : "linear-gradient(120deg,#fde8d7,#fce7f3)";
+  const accent = openSvc?.audience === "business" ? "#765098" : "#973e8f";
+  const headerBg = openSvc?.audience === "business" ? "linear-gradient(120deg,#ede9fe,#f3e8ff)" : "linear-gradient(120deg,#fde9eb,#f5e0f5)";
 
   return (
     <div className="fade-up">
@@ -106,7 +106,7 @@ export default function ServicesClient() {
                 fontSize: 15,
                 cursor: "pointer",
                 whiteSpace: "nowrap",
-                background: tab === "business" ? "linear-gradient(135deg,#5b3fa8,#7c3aed)" : "transparent",
+                background: tab === "business" ? "linear-gradient(135deg,#4a3278,#765098)" : "transparent",
                 color: tab === "business" ? "#fff" : "#57517a",
               }}
             >
@@ -123,7 +123,7 @@ export default function ServicesClient() {
                 fontSize: 15,
                 cursor: "pointer",
                 whiteSpace: "nowrap",
-                background: tab === "artist" ? "linear-gradient(125deg,#7c3aed,#c026d3 45%,#ec4899 72%,#f97316)" : "transparent",
+                background: tab === "artist" ? "linear-gradient(125deg,#765098,#973e8f 45%,#973e8f 72%,#e56a78)" : "transparent",
                 color: tab === "artist" ? "#fff" : "#57517a",
               }}
             >
@@ -140,7 +140,7 @@ export default function ServicesClient() {
                 fontSize: 15,
                 cursor: "pointer",
                 whiteSpace: "nowrap",
-                background: tab === "consulting" ? "#f97316" : "transparent",
+                background: tab === "consulting" ? "#e56a78" : "transparent",
                 color: tab === "consulting" ? "#fff" : "#57517a",
               }}
             >
@@ -152,22 +152,22 @@ export default function ServicesClient() {
         {tab === "business" && (
           <div>
             <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(28px,4vw,44px)", fontWeight: 700, margin: "0 0 16px", color: "#2b2733", textAlign: "center" }}>
-              Digital Solutions for <span style={{ color: "#6d28d9" }}>Businesses &amp; Brands</span>
+              Digital Solutions for <span style={{ color: "#5e3f90" }}>Businesses &amp; Brands</span>
             </h2>
             <p style={{ fontSize: 17, color: "#57517a", lineHeight: 1.7, margin: "0 auto 48px", textAlign: "center", maxWidth: 860 }}>
               TapTag provides the strategy, creativity, and technology businesses need to grow. From market research and targeted advertising to content, SEO, social media, development, and analytics, our solutions are designed to connect your brand with the right audience, drive measurable results, and create lasting business impact.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: 28 }}>
               {businessServices.map((s, i) => (
-                <div key={s.num} className={`${hoverLift} bg-white border-[#e7e4f2] hover:border-[#7c3aed]`} style={{ borderWidth: 1, borderStyle: "solid", borderRadius: 14, padding: 32, display: "flex", flexDirection: "column" }}>
+                <div key={s.num} className={`${hoverLift} bg-white border-[#e7e4f2] hover:border-[#765098]`} style={{ borderWidth: 1, borderStyle: "solid", borderRadius: 14, padding: 32, display: "flex", flexDirection: "column" }}>
                   <div style={{ width: 56, height: 56, borderRadius: 14, background: "#f0ebfd", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 22 }}>
-                    <GlyphIcon paths={glyphs[bizGlyphs[i]]} color="#7c3aed" />
+                    <GlyphIcon paths={glyphs[bizGlyphs[i]]} color="#765098" />
                   </div>
                   <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 21, fontWeight: 700, margin: "0 0 12px", color: "#2b2733" }}>{s.title}</h3>
                   <p style={{ fontSize: 16, color: "#57517a", lineHeight: 1.65, margin: "0 0 24px" }}>{s.desc}</p>
                   <button
                     onClick={() => setOpenSvc({ audience: "business", item: s })}
-                    className="bg-transparent text-[#2b2733] border-[#ddd8f0] hover:bg-[#f4f1fd] hover:border-[#7c3aed] hover:text-[#6d28d9]"
+                    className="bg-transparent text-[#2b2733] border-[#ddd8f0] hover:bg-[#f4f1fd] hover:border-[#765098] hover:text-[#5e3f90]"
                     style={{ marginTop: "auto", borderWidth: 1, borderStyle: "solid", padding: "13px 20px", borderRadius: 8, fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%", transition: "background .2s,border-color .2s,color .2s" }}
                   >
                     Learn More
@@ -188,15 +188,15 @@ export default function ServicesClient() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: 28 }}>
               {artistServices.map((s, i) => (
-                <div key={s.num} className={`${hoverLift} bg-white border-[#f7ece2] hover:border-[#f97316]`} style={{ borderWidth: 1, borderStyle: "solid", borderRadius: 14, padding: 32, display: "flex", flexDirection: "column" }}>
-                  <div style={{ width: 56, height: 56, borderRadius: 14, background: "linear-gradient(135deg,#fee9d6,#fde2e9)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 22 }}>
-                    <GlyphIcon paths={glyphs[artistGlyphs[i]]} color="#f97316" />
+                <div key={s.num} className={`${hoverLift} bg-white border-[#f7ece2] hover:border-[#e56a78]`} style={{ borderWidth: 1, borderStyle: "solid", borderRadius: 14, padding: 32, display: "flex", flexDirection: "column" }}>
+                  <div style={{ width: 56, height: 56, borderRadius: 14, background: "linear-gradient(135deg,#fde9eb,#f5e0f2)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 22 }}>
+                    <GlyphIcon paths={glyphs[artistGlyphs[i]]} color="#e56a78" />
                   </div>
                   <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 21, fontWeight: 700, margin: "0 0 12px", color: "#2b2733" }}>{s.title}</h3>
                   <p style={{ fontSize: 16, color: "#57517a", lineHeight: 1.65, margin: "0 0 24px" }}>{s.desc}</p>
                   <button
                     onClick={() => setOpenSvc({ audience: "artist", item: s })}
-                    className="bg-transparent text-[#2b2733] border-[#f7ddc6] hover:bg-[#fff7ed] hover:border-[#f97316] hover:text-[#c2410c]"
+                    className="bg-transparent text-[#2b2733] border-[#f7d8db] hover:bg-[#fef0f2] hover:border-[#e56a78] hover:text-[#b8435a]"
                     style={{ marginTop: "auto", borderWidth: 1, borderStyle: "solid", padding: "13px 20px", borderRadius: 8, fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%", transition: "background .2s,border-color .2s,color .2s" }}
                   >
                     Learn More
@@ -210,15 +210,15 @@ export default function ServicesClient() {
         {tab === "consulting" && (
           <div>
             <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(28px,4vw,44px)", fontWeight: 700, margin: "0 0 16px", color: "#2b2733", textAlign: "center" }}>
-              Strategic <span style={{ color: "#f97316" }}>Consulting</span>
+              Strategic <span style={{ color: "#e56a78" }}>Consulting</span>
             </h2>
             <p style={{ fontSize: 17, color: "#57517a", lineHeight: 1.6, margin: "0 auto 48px", textAlign: "center", maxWidth: 680 }}>
               For founders, executives, and artists who need clarity, direction, and high-level strategy — not just execution.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: 24 }}>
               {consultingItems.map((label) => (
-                <div key={label} className={`${hoverLift} bg-white border-[#f7ece2] hover:border-[#f97316]`} style={{ display: "flex", alignItems: "center", gap: 16, borderWidth: 1, borderStyle: "solid", borderRadius: 14, padding: "24px 26px" }}>
-                  <span style={{ width: 32, height: 32, flexShrink: 0, borderRadius: "50%", background: "linear-gradient(135deg,#fee9d6,#fde2e9)", color: "#f97316", fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>✓</span>
+                <div key={label} className={`${hoverLift} bg-white border-[#f7ece2] hover:border-[#e56a78]`} style={{ display: "flex", alignItems: "center", gap: 16, borderWidth: 1, borderStyle: "solid", borderRadius: 14, padding: "24px 26px" }}>
+                  <span style={{ width: 32, height: 32, flexShrink: 0, borderRadius: "50%", background: "linear-gradient(135deg,#fde9eb,#f5e0f2)", color: "#e56a78", fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>✓</span>
                   <span style={{ fontSize: 17, color: "#2b2733", fontWeight: 500 }}>{label}</span>
                 </div>
               ))}
@@ -227,7 +227,7 @@ export default function ServicesClient() {
         )}
       </div>
 
-      <CtaBanner heading={<>Ready to take your digital presence to the <span style={{ color: "#ec4899" }}>next level?</span></>} buttonLabel="Start the conversation" />
+      <CtaBanner heading={<>Ready to take your digital presence to the <span style={{ color: "#973e8f" }}>next level?</span></>} buttonLabel="Start the conversation" />
 
       {mounted && openSvc && createPortal(
         <div

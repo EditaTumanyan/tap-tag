@@ -9,7 +9,7 @@ type CtaBannerProps = {
 
 export default function CtaBanner({ heading, subtext, buttonLabel = "Get In Touch" }: CtaBannerProps) {
   return (
-    <div style={{ background: "linear-gradient(120deg,#e9d5ff,#fde8d7)", padding: "96px 40px", textAlign: "center" }}>
+    <div style={{ background: "linear-gradient(120deg,#e9d5ff,#fde9eb)", padding: "96px 40px", textAlign: "center" }}>
       <h2
         style={{
           fontFamily: "'Nunito',sans-serif",
@@ -32,7 +32,7 @@ export default function CtaBanner({ heading, subtext, buttonLabel = "Get In Touc
       )}
       <Link
         href="/contact"
-        className="bg-[#f97316] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(249,115,22,0.55)] hover:bg-[#ea580c]"
+        className="bg-[#e56a78] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(229,106,120,0.55)] hover:bg-[#cc5469]"
         style={{
           display: "inline-block",
           color: "#fff",

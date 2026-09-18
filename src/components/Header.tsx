@@ -33,14 +33,14 @@ export default function Header() {
               <Link
                 key={item.key}
                 href={item.href}
-                className={`hover:text-[#f97316] ${active ? "text-[#f97316]" : "text-[#2b2733]"}`}
+                className={`hover:text-[#e56a78] ${active ? "text-[#e56a78]" : "text-[#2b2733]"}`}
                 style={{
                   fontFamily: "'Nunito',sans-serif",
                   fontSize: 16,
                   letterSpacing: "0.01em",
                   fontWeight: active ? 600 : 400,
                   cursor: "pointer",
-                  borderBottom: active ? "2px solid #f97316" : "2px solid transparent",
+                  borderBottom: active ? "2px solid #e56a78" : "2px solid transparent",
                   paddingBottom: 3,
                   transition: "color .2s",
                   textDecoration: "none",
@@ -52,7 +52,7 @@ export default function Header() {
           })}
           <Link
             href="/contact"
-            className="hidden md:inline-block bg-[#f97316] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(249,115,22,0.55)] hover:bg-[#ea580c]"
+            className="hidden md:inline-block bg-[#e56a78] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(229,106,120,0.55)] hover:bg-[#cc5469]"
             style={{
               color: "#fff",
               border: "none",
@@ -96,7 +96,7 @@ export default function Header() {
                 style={{
                   fontFamily: "'Nunito',sans-serif",
                   fontSize: 16,
-                  color: active ? "#f97316" : "#2b2733",
+                  color: active ? "#e56a78" : "#2b2733",
                   fontWeight: active ? 600 : 400,
                   padding: "10px 0",
                   textDecoration: "none",
@@ -110,7 +110,7 @@ export default function Header() {
             href="/contact"
             onClick={() => setMenuOpen(false)}
             style={{
-              background: "#f97316",
+              background: "#e56a78",
               color: "#fff",
               padding: "12px 20px",
               borderRadius: 6,

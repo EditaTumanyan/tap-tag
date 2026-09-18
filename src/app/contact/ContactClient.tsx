@@ -43,7 +43,7 @@ const selectStyle: React.CSSProperties = {
   cursor: "pointer",
 };
 
-const focusClass = "border-[#f7ddc6] focus:outline-none focus:border-[#f97316] focus:shadow-[0_0_0_3px_rgba(249,115,22,0.13)]";
+const focusClass = "border-[#f7d8db] focus:outline-none focus:border-[#e56a78] focus:shadow-[0_0_0_3px_rgba(229,106,120,0.13)]";
 
 const labelStyle: React.CSSProperties = {
   display: "block",
@@ -87,7 +87,7 @@ export default function ContactClient() {
 
   return (
     <div className="fade-up" style={{ maxWidth: 800, margin: "0 auto", padding: "56px 24px 100px" }}>
-      <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", color: "#f97316", fontWeight: 600 }}>
+      <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", color: "#e56a78", fontWeight: 600 }}>
         Contact
       </span>
       <h1 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 40, fontWeight: 700, margin: "12px 0 16px", color: "#2b2733" }}>Let&rsquo;s Start a Conversation</h1>
@@ -98,7 +98,7 @@ export default function ContactClient() {
       )}
 
       {submitted ? (
-        <div className="fade-up" style={{ background: "linear-gradient(120deg,#f3e8ff,#fde8d7)", borderRadius: 14, padding: 36 }}>
+        <div className="fade-up" style={{ background: "linear-gradient(120deg,#f3e8ff,#fde9eb)", borderRadius: 14, padding: 36 }}>
           <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 22, fontWeight: 700, margin: "0 0 8px", color: "#2b2733" }}>Thank you — message sent!</h3>
           <p style={{ fontSize: 15, color: "#57517a", margin: 0 }}>We&rsquo;ve received your message and will get back to you within one business day.</p>
         </div>
@@ -269,7 +269,7 @@ export default function ContactClient() {
                     role="radio"
                     aria-checked={active}
                     onClick={() => setAudience(opt.value)}
-                    className="hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(21,18,63,0.10)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f97316] focus-visible:ring-offset-2"
+                    className="hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(21,18,63,0.10)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e56a78] focus-visible:ring-offset-2"
                     style={{
                       padding: "10px 18px",
                       borderRadius: 999,
@@ -279,8 +279,8 @@ export default function ContactClient() {
                       display: "inline-flex",
                       alignItems: "center",
                       gap: 6,
-                      border: `1px solid ${active ? "#f97316" : "#f7ddc6"}`,
-                      background: active ? "#f97316" : "#fff",
+                      border: `1px solid ${active ? "#e56a78" : "#f7d8db"}`,
+                      background: active ? "#e56a78" : "#fff",
                       color: active ? "#fff" : "#2b2733",
                       transition: "transform .18s,box-shadow .18s,background .18s,border-color .18s",
                     }}
@@ -314,7 +314,7 @@ export default function ContactClient() {
           <button
             type="submit"
             disabled={submitting}
-            className="bg-[#f97316] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(249,115,22,0.55)] hover:bg-[#ea580c]"
+            className="bg-[#e56a78] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(229,106,120,0.55)] hover:bg-[#cc5469]"
             style={{
               color: "#fff",
               border: "none",

@@ -38,7 +38,7 @@ export default function TeamGrid() {
                 transition: "opacity .25s, transform .25s",
               }}
             >
-              <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: "#f97316", fontWeight: 700, marginBottom: 10 }}>
+              <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: "#e56a78", fontWeight: 700, marginBottom: 10 }}>
                 {m.role}
               </div>
               <p style={{ fontSize: 14, color: "#57517a", lineHeight: 1.6, margin: 0 }}>{m.bio}</p>
@@ -50,14 +50,14 @@ export default function TeamGrid() {
                 placeholder="Photo"
                 objectPosition={"imagePosition" in m ? m.imagePosition : undefined}
                 scale={"imageScale" in m ? m.imageScale : undefined}
-                style={{ width: "100%", aspectRatio: "1/1", border: "3px solid #f9d9c0", borderRadius: "50%", background: "#f6dcd2" }}
+                style={{ width: "100%", aspectRatio: "1/1", border: "3px solid #f5d4d8", borderRadius: "50%", background: "#f6dcd2" }}
               />
               <div
                 style={{
                   position: "absolute",
                   inset: -14,
                   borderRadius: "50%",
-                  border: `2px solid ${isHovered ? "#f97316" : "transparent"}`,
+                  border: `2px solid ${isHovered ? "#e56a78" : "transparent"}`,
                   transform: isHovered ? "scale(1.04)" : "scale(1)",
                   transition: "border-color .3s, transform .3s",
                   pointerEvents: "none",

@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
     <div className="fade-up">
       <div style={{ textAlign: "center", padding: "72px 24px 40px" }}>
         <h1 className="text-[34px] md:text-[46px]" style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, margin: "0 0 16px", color: "#2b2733", lineHeight: 1.08 }}>
-          Privacy <span style={{ color: "#f97316" }}>Policy</span>
+          Privacy <span style={{ color: "#e56a78" }}>Policy</span>
         </h1>
         <p style={{ fontSize: 16, color: "#9a94b8" }}>Last updated: August 25, 2026</p>
       </div>
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
         </ul>
         <p style={pStyle}>
           To exercise any applicable rights or ask questions about your personal information, please contact us at{" "}
-          <a href="mailto:contact@taptag.am" style={{ color: "#f97316" }}>contact@taptag.am</a>.
+          <a href="mailto:contact@taptag.am" style={{ color: "#e56a78" }}>contact@taptag.am</a>.
         </p>
 
         <h2 style={h2Style}>Changes to This Privacy Policy</h2>
@@ -94,7 +94,7 @@ export default function PrivacyPolicyPage() {
           If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:
         </p>
         <p style={pStyle}>
-          Email: <a href="mailto:contact@taptag.am" style={{ color: "#f97316" }}>contact@taptag.am</a>
+          Email: <a href="mailto:contact@taptag.am" style={{ color: "#e56a78" }}>contact@taptag.am</a>
           <br />
           Mailing address: Griboyedov 60, Yerevan, Armenia, 0051
         </p>

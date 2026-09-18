@@ -6,7 +6,7 @@ import CtaBanner from "@/components/CtaBanner";
 import { pfCategories, pfProjects } from "@/data/content";
 
 const hoverLift =
-  "hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-18px_rgba(43,39,51,0.28)] hover:border-[#f97316] transition-all duration-300";
+  "hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-18px_rgba(43,39,51,0.28)] hover:border-[#e56a78] transition-all duration-300";
 
 function initialsOf(name: string) {
   return name
@@ -25,7 +25,7 @@ export default function PortfolioClient() {
     <div className="fade-up">
       <div style={{ textAlign: "center", padding: "72px 24px 56px" }}>
         <h1 className="text-[38px] md:text-[54px] lg:text-[68px]" style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, margin: "0 0 20px", color: "#2b2733", lineHeight: 1.08 }}>
-          Work That <span style={{ color: "#f97316" }}>Moved the Numbers</span>
+          Work That <span style={{ color: "#e56a78" }}>Moved the Numbers</span>
         </h1>
         <p style={{ fontSize: 18, color: "#57517a", maxWidth: 700, margin: "0 auto", lineHeight: 1.6 }}>
           Campaigns, launches and platforms we&rsquo;ve built for brands and artists across the Armenian and US markets.
@@ -42,8 +42,8 @@ export default function PortfolioClient() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`hover:border-[#f97316] hover:text-[#c2410c] ${
-                  active ? "bg-[#f97316] text-white border-[#f97316]" : "bg-transparent text-[#57517a] border-[#f2ddcb]"
+                className={`hover:border-[#e56a78] hover:text-[#b8435a] ${
+                  active ? "bg-[#e56a78] text-white border-[#e56a78]" : "bg-transparent text-[#57517a] border-[#f2ddcb]"
                 }`}
                 style={{
                   padding: "10px 20px",
@@ -66,7 +66,7 @@ export default function PortfolioClient() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" style={{ gap: 28 }}>
           {projects.map((p) => (
             <div key={p.slot} className={`${hoverLift} border-[#f7ece2]`} style={{ background: "#fff", borderWidth: 1, borderStyle: "solid", borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
-              <div style={{ position: "relative", background: "linear-gradient(135deg,#9333ea,#ec4899,#f97316)" }}>
+              <div style={{ position: "relative", background: "linear-gradient(135deg,#5e3f90,#973e8f,#e56a78)" }}>
                 <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "flex-start", justifyContent: "flex-start", padding: "18px 22px", fontFamily: "'Nunito',sans-serif", fontSize: 32, fontWeight: 700, color: "rgba(255,255,255,0.55)", letterSpacing: "-0.02em", zIndex: 1 }}>
                   {initialsOf(p.name)}
                 </div>
@@ -74,14 +74,14 @@ export default function PortfolioClient() {
               </div>
               <div style={{ padding: "26px 28px 28px", display: "flex", flexDirection: "column", flex: 1 }}>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, marginBottom: 14 }}>
-                  <span style={{ background: "linear-gradient(135deg,#fee9d6,#fde2e9)", color: "#c2410c", fontSize: 12, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", padding: "6px 12px", borderRadius: 999, fontFamily: "'Nunito',sans-serif" }}>
+                  <span style={{ background: "linear-gradient(135deg,#fde9eb,#f5e0f2)", color: "#b8435a", fontSize: 12, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", padding: "6px 12px", borderRadius: 999, fontFamily: "'Nunito',sans-serif" }}>
                     {p.cat}
                   </span>
                   <span style={{ fontSize: 13, color: "#a9a2b8" }}>{p.tag}</span>
                 </div>
                 <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 21, fontWeight: 700, margin: "0 0 10px", color: "#2b2733" }}>{p.name}</h3>
                 <p style={{ fontSize: 15, color: "#57517a", lineHeight: 1.6, margin: "0 0 22px" }}>{p.desc}</p>
-                <div className="grid grid-cols-3" style={{ gap: 16, marginTop: "auto", paddingTop: 20, borderTop: "1px solid #f6ece4" }}>
+                <div className="grid grid-cols-3" style={{ gap: 16, marginTop: "auto", paddingTop: 20, borderTop: "1px solid #f6e4e6" }}>
                   {p.metrics.map((m) => (
                     <div key={m.l}>
                       <div
@@ -89,7 +89,7 @@ export default function PortfolioClient() {
                           fontFamily: "'Nunito',sans-serif",
                           fontSize: 22,
                           fontWeight: 700,
-                          background: "linear-gradient(120deg,#ec4899,#f97316)",
+                          background: "linear-gradient(120deg,#973e8f,#e56a78)",
                           WebkitBackgroundClip: "text",
                           backgroundClip: "text",
                           color: "transparent",
@@ -109,7 +109,7 @@ export default function PortfolioClient() {
       </div>
 
       <CtaBanner
-        heading={<>Want results like these? <span style={{ color: "#ec4899" }}>Let&rsquo;s talk.</span></>}
+        heading={<>Want results like these? <span style={{ color: "#973e8f" }}>Let&rsquo;s talk.</span></>}
         subtext="Tell us where you are now and where you want to be in twelve months."
       />
     </div>

@@ -253,9 +253,9 @@ export const courses: Course[] = [
 ];
 
 export const courseAccents: Record<string, { accent: string; panel: string; shadow: string }> = {
-  "01": { accent: "#f97316", panel: "#fff7ed", shadow: "rgba(249,115,22,0.5)" },
-  "02": { accent: "#f97316", panel: "#fff7ed", shadow: "rgba(249,115,22,0.5)" },
-  "03": { accent: "#f97316", panel: "#fff7ed", shadow: "rgba(249,115,22,0.5)" },
+  "01": { accent: "#e56a78", panel: "#fef0f2", shadow: "rgba(229,106,120,0.5)" },
+  "02": { accent: "#e56a78", panel: "#fef0f2", shadow: "rgba(229,106,120,0.5)" },
+  "03": { accent: "#e56a78", panel: "#fef0f2", shadow: "rgba(229,106,120,0.5)" },
 };
 
 export const standards = [
@@ -312,7 +312,7 @@ export const pfProjects: PortfolioProject[] = [
 ];
 
 export const team = [
-  { slot: "team-1", name: "Tatev Khachatryan", role: "CEO & Founder", photo: "/assets/team-tatev-khachatryan.jpg",
+  { slot: "team-1", name: "Tatev Khachatryan", role: "CEO & Founder", photo: "/assets/team-tatev-khachatryan.jpg", imagePosition: "50% 50%", imageScale: 1.2,
     bio: "With 13+ years in digital and music marketing and 10× Meta certifications, Tatev leads TapTag's strategy, growth, and creative direction, driving the agency's work across businesses, artists, and international markets." },
   { slot: "team-2", name: "Davit Miroyan", role: "LA Partner & Creative Director", photo: "/assets/team-david-miroyan.jpg",
     bio: "Based in Los Angeles, Davit leads creative direction and content production, developing visual concepts and creative solutions that connect brands and artists with audiences in the US and beyond." },
