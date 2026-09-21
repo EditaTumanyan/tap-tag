@@ -322,7 +322,7 @@ export const team = [
     bio: "With 8+ years in digital marketing, Aza focuses on campaign execution, audience targeting, and optimization, helping businesses build stronger digital presence and achieve sustainable results." },
   { slot: "team-5", name: "Mane Sargsyan", role: "Graphic Designer", photo: "/assets/team-mane-sargsyan.jpg", imagePosition: "50% 15%",
     bio: "Mane brings ideas to life through visual design, creating social media content, campaign creatives, and brand visuals that make every digital touchpoint more impactful." },
-  { slot: "team-6", name: "Edita Tumanyan", role: "Web & Digital Developer", photo: "/assets/edita-tumanyan.jpg", imagePosition: "50% 15%",
+  { slot: "team-6", name: "Edita Tumanyan", role: "Software Engineer", photo: "/assets/edita-tumanyan.jpg", imagePosition: "50% 15%",
     bio: "Edita handles TapTag's web and digital development, building and maintaining websites and digital experiences that are functional, engaging, and built to support business growth." },
 ];
 
