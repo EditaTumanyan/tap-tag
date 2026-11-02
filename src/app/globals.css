@@ -61,3 +61,7 @@ input,
 textarea {
   font-family: "Nunito Sans", sans-serif;
 }
+
+/* FAQ accordion (/faq) */
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item[open] .faq-icon { transform: rotate(45deg); }

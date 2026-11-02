@@ -281,6 +281,34 @@ export const faqs = [
   { q: "Will I receive a certificate?", a: "Yes. Students who successfully complete their course receive an official TapTag certificate." },
 ];
 
+// FAQ page (/faq). Answers are plain text so they can also be used in Google's FAQ structured data.
+// DRAFT: the "About TapTag" and "Services" answers use facts from the site; Tatev to review/replace.
+export type FaqItem = { q: string; a: string; link?: { href: string; label: string } };
+
+export const faqGroups: { title: string; items: FaqItem[] }[] = [
+  {
+    title: "About TapTag",
+    items: [
+      { q: "What does TapTag do?", a: "TapTag is a digital marketing agency in Yerevan, Armenia. Since 2015, we have helped businesses, brands, artists and public figures grow online through marketing strategy, advertising, social media, content creation, SEO, web development and analytics.", link: { href: "/about", label: "About TapTag" } },
+      { q: "Where is TapTag located?", a: "Our office is at 60 Griboyedov St, Yerevan 0051, Armenia, and we are open Monday to Friday, 10:00–18:00. We work with clients in Armenia, the United States and international markets." },
+      { q: "Who has TapTag worked with?", a: "We have worked with 300+ businesses and brands and 70+ artists and public figures, and contributed to major projects such as Eurovision, Junior Eurovision and the European Boxing Championship." },
+    ],
+  },
+  {
+    title: "Services",
+    items: [
+      { q: "What services do you offer for businesses?", a: "We offer marketing strategy, brand strategy, PPC and social media advertising, social media management, content creation, influencer marketing, SEO, web and app development, and analytics and conversion optimization.", link: { href: "/services", label: "See all business services" } },
+      { q: "Do you work with artists and musicians?", a: "Yes. We help artists and public figures with personal branding, music marketing and distribution, social media and YouTube growth, content, publishing and royalty management, and media coverage.", link: { href: "/services?tab=artist", label: "See services for artists" } },
+      { q: "Do you offer one-off consulting?", a: "Yes. Our strategic consulting is for founders, executives and artists who need clear direction and high-level strategy, including business and brand diagnostics, positioning, growth planning and market entry.", link: { href: "/services?tab=consulting", label: "About strategic consulting" } },
+      { q: "How do I get started?", a: "Book a call or send us a message through our contact page, tell us about your business or project, and our team will get back to you within one business day.", link: { href: "/contact", label: "Book a call" } },
+    ],
+  },
+  {
+    title: "Courses",
+    items: faqs.map((f) => ({ ...f, link: undefined })),
+  },
+];
+
 export type PortfolioProject = {
   slot: string;
   cat: string;
@@ -365,5 +393,6 @@ export const footerLinks = [
   { label: "Services", href: "/services" },
   { label: "Courses", href: "/courses" },
   { label: "About Us", href: "/about" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];

@@ -3,7 +3,7 @@ import { SITE_URL } from "@/data/seo";
 import { businessServices, artistServices } from "@/data/content";
 
 const routes = [
-  "/", "/services", "/courses", "/about", "/contact", "/privacy-policy",
+  "/", "/services", "/courses", "/about", "/contact", "/faq", "/privacy-policy",
   ...[...businessServices, ...artistServices].map((s) => `/services/${s.slug}`),
 ];
 
