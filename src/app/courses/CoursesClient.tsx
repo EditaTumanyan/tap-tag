@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import GlyphIcon from "@/components/GlyphIcon";
 import CtaBanner from "@/components/CtaBanner";
+import FaqList from "@/components/FaqList";
 import { coursePaths } from "@/data/glyphs";
 import { courses, standards, addons, faqs, courseAccents } from "@/data/content";
 
@@ -122,16 +123,17 @@ export default function CoursesClient() {
 
       <div style={{ padding: "64px 24px" }}>
         <div style={{ maxWidth: 820, margin: "0 auto" }}>
-          <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(26px,4vw,36px)", fontWeight: 700, margin: "0 0 40px", color: "#2b2733", textAlign: "center" }}>
-            Questions, <span style={{ color: "#e56a78" }}>answered</span>
+          <h2 style={{ fontFamily: "'Nunito',sans-serif", fontSize: "clamp(26px,4vw,36px)", fontWeight: 700, margin: "0 0 12px", color: "#2b2733", textAlign: "center" }}>
+            Frequently Asked <span style={{ color: "#e56a78" }}>Questions</span>
           </h2>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            {faqs.map((f) => (
-              <div key={f.q} style={{ padding: "24px 0", borderBottom: "1px solid #ecebf5" }}>
-                <h4 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 17, fontWeight: 700, margin: "0 0 8px", color: "#2b2733" }}>{f.q}</h4>
-                <p style={{ fontSize: 15, color: "#57517a", lineHeight: 1.6, margin: 0 }}>{f.a}</p>
-              </div>
-            ))}
+          <p style={{ fontSize: 17, color: "#57517a", lineHeight: 1.6, margin: "0 0 28px", textAlign: "center" }}>
+            Everything you need to know before choosing your course.
+          </p>
+          <FaqList items={faqs} />
+          <div style={{ textAlign: "center", marginTop: 32 }}>
+            <Link href="/faq" className="hover:text-[#e56a78]" style={{ color: "#765098", fontWeight: 700, fontSize: 16, textDecoration: "none" }}>
+              See all FAQs →
+            </Link>
           </div>
         </div>
       </div>
