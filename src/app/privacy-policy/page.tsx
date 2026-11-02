@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/data/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy — TapTag",
+export const metadata: Metadata = pageMetadata({
+  title: "Privacy Policy | TapTag",
   description: "How TapTag collects, uses, and protects your information.",
-};
+  path: "/privacy-policy",
+});
 
 const h2Style = { fontFamily: "'Nunito',sans-serif", fontSize: 22, fontWeight: 700, margin: "40px 0 12px", color: "#2b2733" } as const;
 const pStyle = { fontSize: 16, color: "#57517a", lineHeight: 1.75, margin: "0 0 14px" } as const;

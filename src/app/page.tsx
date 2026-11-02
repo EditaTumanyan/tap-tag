@@ -5,6 +5,7 @@ import CountUp from "@/components/CountUp";
 import CtaBanner from "@/components/CtaBanner";
 import { glyphs } from "@/data/glyphs";
 import { featureBoxes, stats, partners } from "@/data/content";
+import { organizationJsonLd } from "@/data/seo";
 
 const gradientText = {
   background: "linear-gradient(90deg,#5e3f90,#973e8f,#e56a78)",
@@ -31,6 +32,10 @@ const cardBorder = { borderWidth: 1, borderStyle: "solid" } as const;
 export default function Home() {
   return (
     <div className="fade-up">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c") }}
+      />
       <div
         className="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] items-center"
         style={{ maxWidth: 1280, margin: "0 auto", padding: "56px 24px 56px", gap: 56 }}

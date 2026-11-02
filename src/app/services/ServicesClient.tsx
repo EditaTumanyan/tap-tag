@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import ImageSlot from "@/components/ImageSlot";
@@ -40,10 +40,8 @@ function useIsMounted() {
   );
 }
 
-export default function ServicesClient() {
+export default function ServicesClient({ tabParam }: { tabParam: string | null }) {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const tabParam = searchParams.get("tab");
   const initialTab: Tab = validTabs.includes(tabParam as Tab) ? (tabParam as Tab) : "business";
   const [tab, setTab] = useState<Tab>(initialTab);
   const [openSvc, setOpenSvc] = useState<OpenSvc>(null);

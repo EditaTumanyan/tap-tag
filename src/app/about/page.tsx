@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/data/seo";
 import Image from "next/image";
 import ImageSlot from "@/components/ImageSlot";
 import GlyphIcon from "@/components/GlyphIcon";
@@ -9,10 +10,11 @@ import { certs, coreValues } from "@/data/content";
 
 const certsLoop = [...certs, ...certs, ...certs, ...certs];
 
-export const metadata: Metadata = {
-  title: "About Us — TapTag",
+export const metadata: Metadata = pageMetadata({
+  title: "About TapTag | Digital Marketing Agency Since 2015",
   description: "Founded in Armenia in 2015, TapTag has worked with 300+ businesses and 70+ artists and public figures across Armenia, the United States, and international markets.",
-};
+  path: "/about",
+});
 
 const hoverLift =
   "hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-18px_rgba(43,39,51,0.24)] hover:border-[#e56a78] transition-all duration-300";

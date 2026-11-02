@@ -2,12 +2,17 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SITE_URL, pageMetadata } from "@/data/seo";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TapTag — Digital Marketing Agency",
-  description:
-    "Since 2015, TapTag has been the strategic engine behind 100+ celebrities and 200+ global brands, scaling digital presence across the Armenian and US markets.",
+  metadataBase: new URL(SITE_URL),
+  ...pageMetadata({
+    title: "TapTag | Digital Marketing Agency in Yerevan, Armenia",
+    description:
+      "TapTag is a digital marketing agency in Yerevan, Armenia. Since 2015, we have helped 300+ brands and 70+ artists grow online. Book a call today.",
+    path: "/",
+  }),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
