@@ -1,13 +1,12 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useEffect, useState, useSyncExternalStore } from "react";
-import { createPortal } from "react-dom";
+import Link from "next/link";
+import { useState } from "react";
 import ImageSlot from "@/components/ImageSlot";
 import GlyphIcon from "@/components/GlyphIcon";
 import CtaBanner from "@/components/CtaBanner";
 import { glyphs, bizGlyphs, artistGlyphs } from "@/data/glyphs";
-import { businessServices, artistServices, consultingItems, type ServiceItem } from "@/data/content";
+import { businessServices, artistServices, consultingItems } from "@/data/content";
 
 const gradientText = {
   background: "linear-gradient(90deg,#5e3f90,#973e8f,#e56a78)",
@@ -27,25 +26,12 @@ const hoverLift =
   "hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-18px_rgba(21,18,63,0.28)] transition-transform duration-300";
 
 type Tab = "business" | "artist" | "consulting";
-type OpenSvc = { audience: "business" | "artist"; item: ServiceItem } | null;
 
 const validTabs: Tab[] = ["business", "artist", "consulting"];
 
-const emptySubscribe = () => () => {};
-function useIsMounted() {
-  return useSyncExternalStore(
-    emptySubscribe,
-    () => true,
-    () => false
-  );
-}
-
 export default function ServicesClient({ tabParam }: { tabParam: string | null }) {
-  const router = useRouter();
   const initialTab: Tab = validTabs.includes(tabParam as Tab) ? (tabParam as Tab) : "business";
   const [tab, setTab] = useState<Tab>(initialTab);
-  const [openSvc, setOpenSvc] = useState<OpenSvc>(null);
-  const mounted = useIsMounted();
 
   const [prevTabParam, setPrevTabParam] = useState(tabParam);
   if (tabParam !== prevTabParam) {
@@ -53,17 +39,6 @@ export default function ServicesClient({ tabParam }: { tabParam: string | null }
     setTab(validTabs.includes(tabParam as Tab) ? (tabParam as Tab) : "business");
   }
 
-  useEffect(() => {
-    if (!openSvc) return;
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [openSvc]);
-
-  const accent = openSvc?.audience === "business" ? "#765098" : "#973e8f";
-  const headerBg = openSvc?.audience === "business" ? "linear-gradient(120deg,#ede9fe,#f3e8ff)" : "linear-gradient(120deg,#fde9eb,#f5e0f5)";
 
   return (
     <div className="fade-up">
@@ -179,15 +154,18 @@ export default function ServicesClient({ tabParam }: { tabParam: string | null }
                   <div style={{ width: 56, height: 56, borderRadius: 14, background: "#f0ebfd", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 22 }}>
                     <GlyphIcon paths={glyphs[bizGlyphs[i]]} color="#765098" />
                   </div>
-                  <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 21, fontWeight: 700, margin: "0 0 12px", color: "#2b2733" }}>{s.title}</h3>
+                  <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 21, fontWeight: 700, margin: "0 0 12px", color: "#2b2733" }}>
+                    <Link href={`/services/${s.slug}`} style={{ color: "inherit", textDecoration: "none" }}>{s.title}</Link>
+                  </h3>
                   <p style={{ fontSize: 16, color: "#57517a", lineHeight: 1.65, margin: "0 0 24px" }}>{s.desc}</p>
-                  <button
-                    onClick={() => setOpenSvc({ audience: "business", item: s })}
+                  <Link
+                    href={`/services/${s.slug}`}
+                    aria-label={`Learn more about ${s.title}`}
                     className="bg-transparent text-[#2b2733] border-[#ddd8f0] hover:bg-[#f4f1fd] hover:border-[#765098] hover:text-[#5e3f90]"
-                    style={{ marginTop: "auto", borderWidth: 1, borderStyle: "solid", padding: "13px 20px", borderRadius: 8, fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%", transition: "background .2s,border-color .2s,color .2s" }}
+                    style={{ marginTop: "auto", borderWidth: 1, borderStyle: "solid", padding: "13px 20px", borderRadius: 8, fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%", textAlign: "center", textDecoration: "none", transition: "background .2s,border-color .2s,color .2s" }}
                   >
                     Learn More
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -208,15 +186,18 @@ export default function ServicesClient({ tabParam }: { tabParam: string | null }
                   <div style={{ width: 56, height: 56, borderRadius: 14, background: "linear-gradient(135deg,#fde9eb,#f5e0f2)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 22 }}>
                     <GlyphIcon paths={glyphs[artistGlyphs[i]]} color="#e56a78" />
                   </div>
-                  <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 21, fontWeight: 700, margin: "0 0 12px", color: "#2b2733" }}>{s.title}</h3>
+                  <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 21, fontWeight: 700, margin: "0 0 12px", color: "#2b2733" }}>
+                    <Link href={`/services/${s.slug}`} style={{ color: "inherit", textDecoration: "none" }}>{s.title}</Link>
+                  </h3>
                   <p style={{ fontSize: 16, color: "#57517a", lineHeight: 1.65, margin: "0 0 24px" }}>{s.desc}</p>
-                  <button
-                    onClick={() => setOpenSvc({ audience: "artist", item: s })}
+                  <Link
+                    href={`/services/${s.slug}`}
+                    aria-label={`Learn more about ${s.title}`}
                     className="bg-transparent text-[#2b2733] border-[#f7d8db] hover:bg-[#fef0f2] hover:border-[#e56a78] hover:text-[#b8435a]"
-                    style={{ marginTop: "auto", borderWidth: 1, borderStyle: "solid", padding: "13px 20px", borderRadius: 8, fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%", transition: "background .2s,border-color .2s,color .2s" }}
+                    style={{ marginTop: "auto", borderWidth: 1, borderStyle: "solid", padding: "13px 20px", borderRadius: 8, fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%", textAlign: "center", textDecoration: "none", transition: "background .2s,border-color .2s,color .2s" }}
                   >
                     Learn More
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -245,53 +226,6 @@ export default function ServicesClient({ tabParam }: { tabParam: string | null }
 
       <CtaBanner heading={<>Ready to take your digital presence to the <span style={{ color: "#973e8f" }}>next level?</span></>} buttonLabel="Start the conversation" />
 
-      {mounted && openSvc && createPortal(
-        <div
-          onClick={() => setOpenSvc(null)}
-          className="fade-up"
-          style={{ position: "fixed", inset: 0, zIndex: 200, background: "rgba(43,39,51,0.55)", backdropFilter: "blur(4px)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}
-        >
-          <div onClick={(e) => e.stopPropagation()} style={{ background: "#fff", borderRadius: 20, maxWidth: 680, width: "100%", maxHeight: "86vh", overflowY: "auto", boxShadow: "0 40px 90px -30px rgba(43,39,51,0.55)" }}>
-            <div style={{ background: headerBg, padding: "36px 32px 30px", position: "relative" }}>
-              <button
-                onClick={() => setOpenSvc(null)}
-                aria-label="Close"
-                className="bg-white/75 hover:bg-white"
-                style={{ position: "absolute", top: 20, right: 22, width: 36, height: 36, border: "none", borderRadius: "50%", color: "#2b2733", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, cursor: "pointer", transition: "background .2s" }}
-              >
-                ×
-              </button>
-              <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase", color: accent, fontWeight: 700, marginBottom: 12 }}>
-                {openSvc.audience === "business" ? "For Businesses & Brands" : "For Artists & Public Figures"}
-              </div>
-              <h3 style={{ fontFamily: "'Nunito',sans-serif", fontSize: 30, fontWeight: 700, color: "#2b2733", margin: 0, lineHeight: 1.15 }}>{openSvc.item.title}</h3>
-            </div>
-            <div style={{ padding: "32px 32px 36px" }}>
-              <p style={{ fontSize: 17, color: "#57517a", lineHeight: 1.7, margin: "0 0 26px" }}>{openSvc.item.long}</p>
-              <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 14, letterSpacing: "0.1em", textTransform: "uppercase", color: "#9b93ab", fontWeight: 700, marginBottom: 16 }}>What&rsquo;s included</div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 32 }}>
-                {openSvc.item.points.map((p) => (
-                  <div key={p} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
-                    <span style={{ width: 26, height: 26, flexShrink: 0, borderRadius: "50%", background: "#f6f4fb", color: accent, fontWeight: 700, fontSize: 14, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 2 }}>✓</span>
-                    <span style={{ fontSize: 16, color: "#2b2733", lineHeight: 1.6 }}>{p}</span>
-                  </div>
-                ))}
-              </div>
-              <button
-                onClick={() => {
-                  setOpenSvc(null);
-                  router.push("/contact");
-                }}
-                className="hover:opacity-90 hover:-translate-y-0.5"
-                style={{ background: accent, color: "#fff", border: "none", padding: "16px 32px", borderRadius: 8, fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 16, cursor: "pointer", width: "100%", transition: "opacity .2s,transform .18s" }}
-              >
-                Talk to us about this
-              </button>
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
     </div>
   );
 }
