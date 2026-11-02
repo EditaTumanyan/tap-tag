@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { audienceOptions } from "@/data/content";
 import { countryCodes } from "@/data/countryCodes";
+import { trackEvent } from "@/lib/analytics";
 
 const PHONE_PATTERN = /^[0-9]{6,14}$/;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -141,6 +142,8 @@ export default function ContactClient() {
               if (!res.ok) {
                 throw new Error("Failed to send message.");
               }
+              // GA4 recommended lead event: sent only after the message was delivered.
+              trackEvent("generate_lead", { form_name: "contact", audience: String(audience || "") });
               setSubmitted(true);
             } catch {
               setError("Something went wrong. Please try again or email us directly.");
