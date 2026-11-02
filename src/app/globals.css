@@ -65,3 +65,25 @@ textarea {
 /* FAQ accordion (/faq) */
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item[open] .faq-icon { transform: rotate(45deg); }
+
+/* Blog article text (/blog/[slug]) */
+.article-body { font-size: 18px; line-height: 1.8; color: #3d3852; }
+.article-body > * + * { margin-top: 1.1em; }
+.article-body p { margin: 0; }
+.article-body h2 { font-family: 'Nunito', sans-serif; font-size: 28px; font-weight: 700; line-height: 1.25; color: #2b2733; margin: 1.8em 0 0.6em; }
+.article-body h3 { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.3; color: #2b2733; margin: 1.5em 0 0.5em; }
+.article-body a { color: #765098; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.article-body a:hover { color: #e56a78; }
+.article-body strong { color: #2b2733; }
+.article-body ul, .article-body ol { padding-left: 1.4em; }
+.article-body ul { list-style: disc; }
+.article-body ol { list-style: decimal; }
+.article-body p:has(> img) { margin-top: 1.6em; margin-bottom: 0.4em; }
+.article-body li + li { margin-top: 0.4em; }
+.article-body li::marker { color: #e56a78; }
+.article-body blockquote { margin: 1.6em 0; padding: 4px 0 4px 22px; border-left: 4px solid #e56a78; color: #57517a; font-style: italic; }
+.article-body img { width: 100%; height: auto; border-radius: 12px; }
+.article-body hr { border: 0; border-top: 1px solid #ecebf5; margin: 2.4em 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.article-body th, .article-body td { border-bottom: 1px solid #ecebf5; padding: 10px 8px; text-align: left; }
+@media (max-width: 640px) { .article-body { font-size: 17px; } .article-body h2 { font-size: 24px; } }

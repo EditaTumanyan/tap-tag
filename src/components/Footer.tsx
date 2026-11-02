@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { footerLinks } from "@/data/content";
+import { getPosts } from "@/lib/blog";
 
 const socialIconStyle = { cursor: "pointer", transition: "color .2s,transform .2s" } as const;
 const socialIconClass = "text-[#6b6485] hover:text-[#e56a78] hover:-translate-y-0.5";
@@ -17,7 +18,7 @@ export default function Footer() {
             <Image src="/assets/logo.png" alt="TapTag" width={133} height={44} style={{ height: 44, width: "auto", marginBottom: 16 }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {footerLinks.map((fl) => (
+            {(getPosts().length ? [...footerLinks.slice(0, -1), { label: "Blog", href: "/blog" }, footerLinks[footerLinks.length - 1]] : footerLinks).map((fl) => (
               <Link
                 key={fl.label}
                 href={fl.href}
