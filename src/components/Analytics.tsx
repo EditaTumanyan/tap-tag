@@ -1,11 +1,10 @@
 "use client";
 
-import Script from "next/script";
 import { useEffect } from "react";
-import { ANALYTICS_ENABLED, GA_ID, trackEvent } from "@/lib/analytics";
+import { ANALYTICS_ENABLED, trackEvent } from "@/lib/analytics";
 
 /**
- * Google Analytics tag (once, in the root layout) + "Book a Call" click tracking.
+ * "Book a Call" click tracking. (The Google tag itself is in the <head> of app/layout.tsx.)
  * Page views on client-side navigation are tracked automatically by GA4 enhanced measurement.
  */
 export default function Analytics() {
@@ -26,17 +25,5 @@ export default function Analytics() {
     return () => document.removeEventListener("click", onClick, { capture: true });
   }, []);
 
-  if (!ANALYTICS_ENABLED) return null;
-
-  return (
-    <>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA_ID}');`}
-      </Script>
-    </>
-  );
+  return null;
 }
